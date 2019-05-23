@@ -1,0 +1,54 @@
+<manifest alg="2" build="2018.0.0.379" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="ABC.COM" resolutions="1x" timestamp="1558036186310">
+  <folder name="css">
+    <file name="site_global.css" crc="444006867"/>
+    <file name="master_a-p_g_-maestra.css" crc="3824530138" ref="index"/>
+    <file name="index.css" crc="3848515506" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="3803043152" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="380897831" ref="index"/>
+    <file name="jquery.watch.js" crc="99325471" ref="index"/>
+    <file name="webpro.js" crc="242022427" ref="index"/>
+    <file name="musewpslideshow.js" crc="457073769" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="483674903" ref="index"/>
+    <file name="touchswipe.js" crc="4066113679" ref="index"/>
+    <file name="jquery.musemenu.js" crc="3784699396" ref="index"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index"/>
+    <file name="require.js" crc="4157109226" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="slider-3.jpg" crc="4093945079" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="slider-4.jpg" crc="357938354" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="slider-5.jpg" crc="3968425638" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="u291.png" crc="3801902626" ref="index"/>
+    <file name="u291-a.png" crc="106167463" ref="index"/>
+    <file name="u340.png" crc="529170857" ref="index"/>
+    <file name="u340-a.png" crc="3884929066" ref="index"/>
+    <file name="u171.png" crc="48773930" ref="index"/>
+    <file name="u171-a.png" crc="297069888" ref="index"/>
+    <file name="u486.png" crc="326876598" ref="index"/>
+    <file name="u486-a.png" crc="4172843492" ref="index"/>
+    <file name="u744.png" crc="3855679492" ref="index"/>
+    <file name="u744-r.png" crc="3855679492" ref="index"/>
+    <file name="twitter_png32.png" crc="38731657" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="qwe.png" crc="59605370" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="image--facebook-icon--omori-wiki-12.png" crc="3947818533" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="447568964" seo="true" mt="1558020631984" redirect="true"/>
+</manifest>

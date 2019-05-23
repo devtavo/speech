@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
+        <script src="p5.speech.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <script>
+
+            function cc() {
+                var myVoice = new p5.Speech();
+                var input =
+                        myVoice.speak('hola como estas hola como estashola como estashola como estashola como estas');
+
+            }
+       </script>
+        
+        <input type="button" onclick="cc()" value="clic">
+    </body>
+</html>
