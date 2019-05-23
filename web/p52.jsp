@@ -238,10 +238,9 @@
                             textArea.innerHTML = ttt;
                             //text(myRec.resultString, width/2 , height/2 );
                             //document.getElementById("textArea2").innerHTML = speechresult = textArea.value;
+                            
                             document.getElementById("textArea2").innerHTML = speechresult = myRec.resultString;
-                             
-                           
-                            console.log(myRec.resultString);
+                            myRec.resultString=0;
                             traducido = document.getElementById("textArea2").textContent;
                             window.setTimeout(obtener, 2000); 
                             console.log(myRec.resultConfidence);
