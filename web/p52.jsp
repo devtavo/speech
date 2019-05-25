@@ -223,40 +223,41 @@
                 function setup() {
                     // create an audio in
                     mic = new p5.AudioIn();
-                    myRec.continuous = false;
+                    myRec.continuous = true;
                     myRec.interimResults = true;
                     myRec.defaultLanguage = "en-US";
                     //          myRec.start();
-                    myRec.onResult = showResult;
+                     myRec.onResult = showResult;
+                   
                     function showResult()
                     {
-                        if (myRec.resultValue == true && myRec.resultConfidence>=0.89) {
+                        if (myRec.resultValue === true && myRec.resultConfidence>=0.89 ) {
                             //background(192, 255, 192);
                             var ttt = "";
                             ttt = ttt + myRec.resultString;
                             var textArea = document.getElementById("textArea");
-                            textArea.innerHTML = ttt;
+                             textArea.innerHTML = ttt;
                             //text(myRec.resultString, width/2 , height/2 );
                             //document.getElementById("textArea2").innerHTML = speechresult = textArea.value;
                             
                             document.getElementById("textArea2").innerHTML = speechresult = myRec.resultString;
-                            myRec.resultString=0;
+                            
                             traducido = document.getElementById("textArea2").textContent;
                             window.setTimeout(obtener, 2000); 
                             console.log(myRec.resultConfidence);
                             
                             function obtener() {
                                                                 
-                            //traducido = document.getElementById("textArea2").textContent;
+                                //traducido = document.getElementById("textArea2").textContent;
                                 traducido = document.getElementById("textArea2").textContent;
                                 responsiveVoice.speak(traducido, "US English Female", {pitch: 0}, {rate: 0});
                                
                             }
                                 
-//                            console.log(myRec.resultString);
-                            // document.getElementById("textArea2").innerHTML=speechresult;
-
-
+                            // console.log(myRec.resultString);
+//                             document.getElementById("textArea2").innerHTML=speechresult;
+//
+//
 //                                window.setTimeout( 
 //                                    function() {
 //                                 
@@ -271,8 +272,9 @@
 //                                    //  responsiveVoice.speak(traducido,"US English Male" , { pitch: 1}, {rate: 1.5});
 //                                 console.log(ttt);
 //                                 console.log(traducido);
-
-                        }
+//
+//                        }
+                        myRec.resultString="";
                     }
 //                    myRec.onResult = function (event)
 //                    {
@@ -284,7 +286,7 @@
 //
 //                        speechresult = textArea.value;
 //                        console.log(textArea);
-//                    }
+ }
 
                     recorder = new p5.SoundRecorder();
 
