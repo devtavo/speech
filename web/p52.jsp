@@ -43,7 +43,7 @@
             background-color: #4CAF50;
         }
     </style>
-    <body onload="setcookie()" oncontextmenu="return false" onkeydown="return false">
+    <body onload="setcookie()">
 
         <jsp:include page="nuevospeech.html"></jsp:include>
         <!-- Modal -->
@@ -180,7 +180,7 @@
                 let fingers;
                 let button;
                 function setcookie() {
-                    document.cookie = "googtrans=/auto/en; expires=N/A;domain=localhost;path=/";
+                    document.cookie = "googtrans=/auto/en; expires=N/A;domain=192.168.1.26:8084;path=/";
 
                 }
                 function move() {
@@ -217,7 +217,7 @@
                 var traducido = "";
                 //////////////////////p5.js
                 var myRec = new p5.SpeechRec();
-                
+
 
                 var tipo = 0;
                 function setup() {
@@ -227,33 +227,31 @@
                     myRec.interimResults = true;
                     myRec.defaultLanguage = "en-US";
                     //          myRec.start();
-                     myRec.onResult = showResult;
-                   
+                    myRec.onResult = showResult;
+
                     function showResult()
                     {
-                        if (myRec.resultValue === true && myRec.resultConfidence>=0.89 ) {
+                        if (myRec.resultValue === true && myRec.resultConfidence >= 0.89) {
                             //background(192, 255, 192);
                             var ttt = "";
                             ttt = ttt + myRec.resultString;
                             var textArea = document.getElementById("textArea");
-                             textArea.innerHTML = ttt;
-                            //text(myRec.resultString, width/2 , height/2 );
-                            //document.getElementById("textArea2").innerHTML = speechresult = textArea.value;
-                            
+                            textArea.innerHTML = ttt;
+
                             document.getElementById("textArea2").innerHTML = speechresult = myRec.resultString;
-                            
                             traducido = document.getElementById("textArea2").textContent;
-                            window.setTimeout(obtener, 2000); 
+                            myRec.resultString = "";
+                            window.setTimeout(obtener, 1000);
                             console.log(myRec.resultConfidence);
-                            
+
                             function obtener() {
-                                                                
+
                                 //traducido = document.getElementById("textArea2").textContent;
                                 traducido = document.getElementById("textArea2").textContent;
                                 responsiveVoice.speak(traducido, "US English Female", {pitch: 0}, {rate: 0});
-                               
+
                             }
-                                
+
                             // console.log(myRec.resultString);
 //                             document.getElementById("textArea2").innerHTML=speechresult;
 //
@@ -274,8 +272,10 @@
 //                                 console.log(traducido);
 //
 //                        }
-                        myRec.resultString="";
-                    }
+
+                        }
+
+
 //                    myRec.onResult = function (event)
 //                    {
 //                        var textArea = document.getElementById("textArea");
@@ -286,7 +286,7 @@
 //
 //                        speechresult = textArea.value;
 //                        console.log(textArea);
- }
+                    }
 
                     recorder = new p5.SoundRecorder();
 
