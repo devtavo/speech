@@ -228,64 +228,28 @@
                     myRec.defaultLanguage = "en-US";
                     //          myRec.start();
                     myRec.onResult = showResult;
-
+                    var ttt = "";
+                    var textArea = "";
                     function showResult()
                     {
-                        if (myRec.resultValue === true && myRec.resultConfidence >= 0.89) {
-                            //background(192, 255, 192);
-                            var ttt = "";
-                            ttt = ttt + myRec.resultString;
-                            var textArea = document.getElementById("textArea");
-                            textArea.innerHTML = ttt;
+                        if (myRec.resultValue === true) {
+                            if (myRec.resultConfidence >= 0.89 && myRec.resultConfidence <= 0.91) {
 
-                            document.getElementById("textArea2").innerHTML = speechresult = myRec.resultString;
-                            traducido = document.getElementById("textArea2").textContent;
-                            myRec.resultString = "";
-                            window.setTimeout(obtener, 1000);
-                            console.log(myRec.resultConfidence);
-
-                            function obtener() {
-
-                                //traducido = document.getElementById("textArea2").textContent;
-                                traducido = document.getElementById("textArea2").textContent;
-                                responsiveVoice.speak(traducido, "US English Female", {pitch: 0}, {rate: 0});
-
+                                ttt = ttt + myRec.resultString;
+                                textArea = document.getElementById("textArea");
+                                textArea.innerHTML = " "+ttt;
+                                document.getElementById("textArea2").innerHTML = myRec.resultString;
+                                // traducido = document.getElementById("textArea2").textContent;
+                                myRec.resultString = "";
+                                window.setTimeout(obtener, 800);
                             }
-
-                            // console.log(myRec.resultString);
-//                             document.getElementById("textArea2").innerHTML=speechresult;
-//
-//
-//                                window.setTimeout( 
-//                                    function() {
-//                                 
-//                                    var ori = document.getElementById("textArea2");
-//                                    traducido = document.getElementById("otro").innerHTML = ori.textContent;
-//                                    document.getElementById("traduc").innerHTML = traducido;
-//                                    console.log(ori.textContent);
-//                                    responsiveVoice.speak(ori.textContent,"US English Female" , { pitch: 0}, {rate: 0});
-//                                                }                     
-//                                       , 800);
-//                                 traducido=document.getElementById("textArea2").textContent;
-//                                    //  responsiveVoice.speak(traducido,"US English Male" , { pitch: 1}, {rate: 1.5});
-//                                 console.log(ttt);
-//                                 console.log(traducido);
-//
-//                        }
-
                         }
+                    }
+                    function obtener() {
 
-
-//                    myRec.onResult = function (event)
-//                    {
-//                        var textArea = document.getElementById("textArea");
-//
-//                        textArea.innerHTML += event.results[event.results.length - 1][0].transcript;
-//                        // textArea.replace("\n", "<br>");
-//                        document.getElementById("textArea2").innerHTML = textArea.textContent;
-//
-//                        speechresult = textArea.value;
-//                        console.log(textArea);
+                        traducido = document.getElementById("textArea2").textContent;
+                        responsiveVoice.speak(traducido, "US English Female", {pitch: 0}, {rate: 0});
+                        document.getElementById("textArea2").innerHTML = myRec.resultString;
                     }
 
                     recorder = new p5.SoundRecorder();
