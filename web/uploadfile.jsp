@@ -19,7 +19,7 @@
         <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
         <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
         <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
-        <!--<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.js"></script>-->
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.js"></script>
         <script src="js/p5speech.js" type="text/javascript"></script>
         <title>SUBIENDO ARCHIVO...</title>
     </head>
@@ -98,7 +98,7 @@
 
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <%
-            String archivourl = "C:\\Users\\C-02\\Desktop\\sistemas\\speech-20190425T202959Z-001\\speech\\speechnuevo\\web\\audios";
+            String archivourl = "C:\\Users\\C-01\\Documents\\NetBeansProjects\\speech\\web\\audios";
             DiskFileItemFactory factory = new DiskFileItemFactory();
             factory.setSizeThreshold(1024);
             factory.setRepository(new File(archivourl));
