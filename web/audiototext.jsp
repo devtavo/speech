@@ -16,7 +16,7 @@
 
     </head>
     <body  >
-        <jsp:include page="nuevospeech.html"></jsp:include>
+        
  
         <div class="panel panel-default">
             <div class="panel-heading" ><h4 align="center">SPEECH TO TEXT - JUVENTUD GLOBALIZADA</h4></div>
@@ -35,6 +35,7 @@
                     </tr>
                 </table>
             </form>
+            
             <script>
                 function an(){
 
