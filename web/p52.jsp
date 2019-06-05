@@ -84,7 +84,7 @@
 
                             recorder.stop();
                             responsiveVoice.cancel();
-                            save(soundFile, 'mySound.wav');
+                            save(soundFile, 'mySound');
                         }
                     }
                 }

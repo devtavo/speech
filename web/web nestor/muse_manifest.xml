@@ -1,54 +1,390 @@
-<manifest alg="2" build="2018.0.0.379" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="ABC.COM" resolutions="1x" timestamp="1558036186310">
+<manifest alg="2" build="2018.0.0.379" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="127.0.0.1" resolutions="1x" timestamp="1559675806752">
   <folder name="css">
     <file name="site_global.css" crc="444006867"/>
-    <file name="master_a-p_g_-maestra.css" crc="3824530138" ref="index"/>
-    <file name="index.css" crc="3848515506" ref="index"/>
+    <file name="subtitulado.css" crc="4294786150" ref="subtitulado"/>
+    <file name="nomq_subtitulado.css" crc="524728958" ref="subtitulado"/>
+    <file name="index.css" crc="4153818593" ref="index"/>
+    <file name="nomq_index.css" crc="3869129283" ref="index"/>
+    <file name="subir-archivos.css" crc="4275217852" ref="subir-archivos"/>
+    <file name="nomq_subir-archivos.css" crc="3912403415" ref="subir-archivos"/>
+    <file name="traducir-en-linea.css" crc="3992877588" ref="traducir-en-linea"/>
+    <file name="nomq_traducir-en-linea.css" crc="69430318" ref="traducir-en-linea"/>
   </folder>
   <folder name="scripts">
-    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
-    <file name="museutils.js" crc="3803043152" ref="index"/>
-    <file name="whatinput.js" crc="86476730" ref="index"/>
-    <file name="museconfig.js" crc="380897831" ref="index"/>
-    <file name="jquery.watch.js" crc="99325471" ref="index"/>
-    <file name="webpro.js" crc="242022427" ref="index"/>
-    <file name="musewpslideshow.js" crc="457073769" ref="index"/>
-    <file name="jquery.museoverlay.js" crc="483674903" ref="index"/>
-    <file name="touchswipe.js" crc="4066113679" ref="index"/>
-    <file name="jquery.musemenu.js" crc="3784699396" ref="index"/>
-    <file name="html5shiv.js" crc="4241844378" ref="index"/>
-    <file name="require.js" crc="4157109226" ref="index"/>
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="museutils.js" crc="3803043152" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="whatinput.js" crc="86476730" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="museconfig.js" crc="380897831" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="jquery.watch.js" crc="99325471" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="webpro.js" crc="242022427" ref="index:subir-archivos"/>
+    <file name="musewpslideshow.js" crc="457073769" ref="index:subir-archivos"/>
+    <file name="jquery.museoverlay.js" crc="483674903" ref="index:subir-archivos"/>
+    <file name="touchswipe.js" crc="4066113679" ref="index:subir-archivos"/>
+    <file name="jquery.musemenu.js" crc="3784699396" ref="index:subir-archivos:traducir-en-linea"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="jquery.museresponsive.js" crc="3955820958" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="require.js" crc="4157109226" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
   </folder>
   <folder name="images">
-    <file name="slider-3.jpg" crc="4093945079" seo="true" ref="index">
+    <file name="teclado-slider.jpg" crc="257723795" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
     </file>
-    <file name="blank.gif" crc="4208392903" ref="index"/>
-    <file name="slider-4.jpg" crc="357938354" seo="true" ref="index">
+    <file name="blank.gif" crc="4208392903" ref="index:subir-archivos:traducir-en-linea:subtitulado"/>
+    <file name="slier4.jpg" crc="84477100" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
     </file>
-    <file name="slider-5.jpg" crc="3968425638" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
+    <file name="loading.gif" crc="3815509949" ref="index:subir-archivos"/>
+    <file name="u6298.png" crc="241357291" ref="index"/>
+    <file name="u6298-a.png" crc="4260956332" ref="index"/>
+    <file name="u6484.png" crc="203360133" ref="index"/>
+    <file name="u6484-a.png" crc="428377903" ref="index"/>
+    <file name="u62982.png" crc="4293966861" ref="index"/>
+    <file name="u6298-a2.png" crc="4104354842" ref="index"/>
+    <file name="u64842.png" crc="289697371" ref="index"/>
+    <file name="u6484-a2.png" crc="182095651" ref="index"/>
+    <file name="estrella-relleno-nergro.png" crc="292159396" seo="true" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
     </file>
-    <file name="loading.gif" crc="3815509949" ref="index"/>
-    <file name="u291.png" crc="3801902626" ref="index"/>
-    <file name="u291-a.png" crc="106167463" ref="index"/>
-    <file name="u340.png" crc="529170857" ref="index"/>
-    <file name="u340-a.png" crc="3884929066" ref="index"/>
-    <file name="u171.png" crc="48773930" ref="index"/>
-    <file name="u171-a.png" crc="297069888" ref="index"/>
-    <file name="u486.png" crc="326876598" ref="index"/>
-    <file name="u486-a.png" crc="4172843492" ref="index"/>
-    <file name="u744.png" crc="3855679492" ref="index"/>
-    <file name="u744-r.png" crc="3855679492" ref="index"/>
-    <file name="twitter_png32.png" crc="38731657" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
+    <file name="crosscurriculr-en-negro-png.png" crc="3930235976" seo="true" ref="subir-archivos:subtitulado">
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
     </file>
-    <file name="qwe.png" crc="59605370" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
+    <file name="u499-4.png" crc="3988125219" ref="subir-archivos"/>
+    <file name="u14075-4.png" crc="3804011031" ref="subir-archivos"/>
+    <file name="u14181-4.png" crc="4080211599" ref="subir-archivos"/>
+    <file name="u6940-4.png" crc="533096795" ref="subir-archivos"/>
+    <file name="subir archivo1.png" crc="3867513278" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
     </file>
-    <file name="image--facebook-icon--omori-wiki-12.png" crc="3947818533" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
+    <file name="subir-archivo-2.png" crc="454245098" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+    </file>
+    <file name="icono-mujer-1.png" crc="425335571" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+    </file>
+    <file name="icono-mujer-2.png" crc="4041729537" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+    </file>
+    <file name="icono-hombre-1.png" crc="364721469" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+    </file>
+    <file name="hombre-icono-2.png" crc="4139202881" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+    </file>
+    <file name="u9784.png" crc="3839786185" ref="subir-archivos"/>
+    <file name="u9784-a.png" crc="4067317531" ref="subir-archivos"/>
+    <file name="baner-de-activacion-2.jpg" crc="4212622201" seo="true" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+    </file>
+    <file name="baneer-de--activacion-2.jpg" crc="236547541" seo="true" ref="subir-archivos">
+      <caption webpage="subir-archivos" alt=""/>
+      <caption webpage="subir-archivos" alt=""/>
+    </file>
+    <file name="u499-42.png" crc="3873762090" ref="subir-archivos"/>
+    <file name="u14075-42.png" crc="3909786801" ref="subir-archivos"/>
+    <file name="u14181-42.png" crc="390157800" ref="subir-archivos"/>
+    <file name="u6940-42.png" crc="502130193" ref="subir-archivos"/>
+    <file name="u97842.png" crc="3869689998" ref="subir-archivos"/>
+    <file name="u9784-a2.png" crc="410390647" ref="subir-archivos"/>
+    <file name="crosscurricular-en-blanco-png.png" crc="479668025" seo="true" ref="traducir-en-linea">
+      <caption webpage="traducir-en-linea" alt=""/>
+      <caption webpage="traducir-en-linea" alt=""/>
+    </file>
+    <file name="u11457.png" crc="369562823" ref="traducir-en-linea"/>
+    <file name="u11457-r.png" crc="412806035" ref="traducir-en-linea"/>
+    <file name="u11457-a.png" crc="243470984" ref="traducir-en-linea"/>
+    <file name="u12078.png" crc="3866117474" ref="traducir-en-linea"/>
+    <file name="u12078-r.png" crc="133219307" ref="traducir-en-linea"/>
+    <file name="u12078-a.png" crc="4286537086" ref="traducir-en-linea"/>
+    <file name="u12133.png" crc="4088471284" ref="traducir-en-linea"/>
+    <file name="u12133-r.png" crc="4258038431" ref="traducir-en-linea"/>
+    <file name="u12133-a.png" crc="3176828" ref="traducir-en-linea"/>
+    <file name="u12187.png" crc="3766818162" ref="traducir-en-linea"/>
+    <file name="u12187-r.png" crc="4190203049" ref="traducir-en-linea"/>
+    <file name="u12187-a.png" crc="306615141" ref="traducir-en-linea"/>
+    <file name="u114572.png" crc="416049092" ref="traducir-en-linea"/>
+    <file name="u11457-r2.png" crc="4083273529" ref="traducir-en-linea"/>
+    <file name="u11457-a2.png" crc="4016617613" ref="traducir-en-linea"/>
+    <file name="u120782.png" crc="132370883" ref="traducir-en-linea"/>
+    <file name="u12078-r2.png" crc="435103213" ref="traducir-en-linea"/>
+    <file name="u12078-a2.png" crc="4118759993" ref="traducir-en-linea"/>
+    <file name="u121332.png" crc="3863121745" ref="traducir-en-linea"/>
+    <file name="u12133-r2.png" crc="4178053273" ref="traducir-en-linea"/>
+    <file name="u12133-a2.png" crc="4165538010" ref="traducir-en-linea"/>
+    <file name="u121872.png" crc="3918364270" ref="traducir-en-linea"/>
+    <file name="u12187-r2.png" crc="362094870" ref="traducir-en-linea"/>
+    <file name="u12187-a2.png" crc="4195207441" ref="traducir-en-linea"/>
+    <file name="relleno-blanco-estrella.png" crc="405990035" seo="true" ref="subtitulado">
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
+      <caption webpage="subtitulado" alt=""/>
     </file>
   </folder>
-  <file name="index.html" crc="447568964" seo="true" mt="1558020631984" redirect="true"/>
+  <file name="index.html" crc="205466827" seo="true" mt="1559331101104" redirect="true"/>
+  <file name="subir-archivos.html" crc="4146408179" seo="true" mt="1559667733896" redirect="true"/>
+  <file name="traducir-en-linea.html" crc="3876624178" seo="true" mt="1559331101104" redirect="true"/>
+  <file name="subtitulado.html" crc="3773406295" seo="true" mt="1559666902665" redirect="true"/>
 </manifest>

@@ -3,7 +3,7 @@
     <head>
         <title>Juventud globalizada</title>
         <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="js/favicon.png" />
+        <link rel="icon" type="image/png" href="js/favicon.png" />
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -15,12 +15,9 @@
         <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 
     </head>
-
-
-    <!--<body oncontextmenu="return false" onkeydown="return false">-->
-    <body>
+    <body  >
         <jsp:include page="nuevospeech.html"></jsp:include>
-
+ 
         <div class="panel panel-default">
             <div class="panel-heading" ><h4 align="center">SPEECH TO TEXT - JUVENTUD GLOBALIZADA</h4></div>
 
@@ -30,7 +27,8 @@
                         <td>
                             <!--<input type="hidden" value="1" name="tipo" id="tipo"></input>--> 
 
-                            <input type="file" id="file" name="file" onchange="an()"/>
+                            <input type="file" class="btn-success" id="file" name="file" onchange="an()" />
+                           
                             <input type="submit" id="sub" value="SUBIR ARCHIVO" disabled="true" />
 
                         </td>

@@ -199,7 +199,8 @@
                             $('.modal-backdrop').remove();
                             recorder.stop();
                             responsiveVoice.cancel();
-                            save(soundFile, 'mySound.wav');
+                           save(soundFile, 'mySound');
+                          
                         }
                     }
                 }
@@ -243,6 +244,7 @@
                     // connect the mic to the recorder
                     recorder.setInput(mic);
                     soundFile = new p5.SoundFile();
+                    
                 }
 
 
@@ -285,9 +287,9 @@
                     console.log(genero);
 
                     responsiveVoice.speak(traducido, genero, {
-                        pitch: 1
+                        pitch:1
                     }, {
-                        rate: 1.5
+                        rate:1
                     });
                     mic.start();
                     recorder.record(soundFile);
@@ -371,7 +373,9 @@
                         statev++;
                     } else if (statev === 2) {
                         //soundFile.play(); // play the result!
-                        save(soundFile, 'mySound.wav');
+                        save(soundFile, 'mySound');
+                        
+                        
                         statev++;
                     }
                 }
