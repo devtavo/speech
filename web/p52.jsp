@@ -21,7 +21,7 @@
     </head>
     
     <body onload="setcookie()">
-        <jsp:include page="nuevospeech.html"></jsp:include>
+       
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({

@@ -4,54 +4,61 @@
         <title>Juventud globalizada</title>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="js/favicon.png" />
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript --> 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 
     </head>
-    <body  >
-        
- 
-        <div class="panel panel-default">
-            <div class="panel-heading" ><h4 align="center">SPEECH TO TEXT - JUVENTUD GLOBALIZADA</h4></div>
+    <body>
+<!--       <script>
+           function getprovincia(){
+                cdep = document.getElementById("seldpto").form
+                $.ajax({
+                    data:{dpto:cdep},
+                    type: 'POST',
+                    url: "interno.jsp",
+                    success: function (response) {
+                        document.getElementById("divprov").innerHTML=response;
+                    }
+                });
+            }
+        </script>-->
 
-            <form action="uploadfile.jsp" method="post" enctype="multipart/form-data">
-                <table>
-                    <tr>
-                        <td>
-                            <!--<input type="hidden" value="1" name="tipo" id="tipo"></input>--> 
 
-                            <input type="file" class="btn-success" id="file" name="file" onchange="an()" />
-                           
-                            <input type="submit" id="sub" value="SUBIR ARCHIVO" disabled="true" />
+<form action="uploadfile.jsp" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>
+                        <!--<input type="hidden" value="1" name="tipo" id="tipo"></input>--> 
 
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            
-            <script>
-                function an(){
+                        <input type="file" id="file" name="file" onchange="an()" />
 
-                    var w=document.getElementById("file").value;
-                    
-                    var z=w.substr(-3);
-                    
-                if (z!== "") {
-                   if(z=="mp3" || z=="mp4" || z=="MP3" || z=="MP4") {
-                       
-                   document.getElementById("sub").disabled=false;
+                        <input type="submit" id="sub" value="SUBIR ARCHIVO" disabled="true" />
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+            function an() {
+
+                var w = document.getElementById("file").value;
+
+                var z = w.substr(-3);
+
+                if (z !== "") {
+                    if (z == "mp3" || z == "mp4" || z == "MP3" || z == "MP4") {
+
+                        document.getElementById("sub").disabled = false;
                     }
 
                 }
-                }
-            </script>
+            }
+        </script>
 
 
 </html>
