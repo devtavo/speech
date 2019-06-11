@@ -10,12 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Last-Modified" content="-1">
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript --> 
-       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-       
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
         <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
         <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
         <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
@@ -42,10 +42,16 @@
             height: 30px;
             background-color: #4CAF50;
         }
+        .ratio:hover{
+
+            transform: scale(1.3);
+
+
+        }
     </style>
-<!--    <body > onload="setcookie()" oncontextmenu="return false" onkeydown="return false">-->
-<body onload="setcookie()">
-        
+    <!--    <body > onload="setcookie()" oncontextmenu="return false" onkeydown="return false">-->
+    <body onload="setcookie()" style="background-color: #304597; color: white">
+
         <!-- Modal -->
         <div class="modal fade" id="myModal2" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -98,8 +104,7 @@
 
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <%
-           
-                       
+
             String archivourl = "C:\\Users\\C-01\\Documents\\NetBeansProjects\\speech\\web\\audios";
             DiskFileItemFactory factory = new DiskFileItemFactory();
             factory.setSizeThreshold(1024);
@@ -115,80 +120,116 @@
                     ruta_archivo = items.getName();
                 }
             } catch (Exception e) {
-                out.print("Exception: " + e.getMessage() + "");
+                //.print("Exception: " + e.getMessage() + "");
             }
-            
+
 //            String tipo= request.getParameter("tipo");
-            
+
         %>
-         
-    <div class="bd-example">
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="2000">
-    <ol class="carousel-indicators">
-<!--      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>-->
-     
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active" >
-          <img src="images/baneer-de--activacion-2.jpg" class="d-block w-100" width="100%" height="139px">
-        <div class="carousel-caption d-none d-md-block">
-<!--          <h5>First slide label</h5>-->
-<!--          <a href="audiototext.jsp" class="btn btn-light btn-outline-danger" > SUBIR AUDIO</a>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <a href="p52.jsp" class="btn btn-light btn-outline-danger" > TRADUCTOR EN LINEA</a>-->
-         
+
+        <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="2000">
+                <ol class="carousel-indicators">
+                    <!--      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>-->
+
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" >
+                        <img src="images/baneer-de--activacion-2.jpg" class="d-block w-100" width="100%" height="139px">
+                        <div class="carousel-caption d-none d-md-block">
+                            <!--          <h5>First slide label</h5>-->
+                            <!--          <a href="audiototext.jsp" class="btn btn-light btn-outline-danger" > SUBIR AUDIO</a>
+                                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                      <a href="p52.jsp" class="btn btn-light btn-outline-danger" > TRADUCTOR EN LINEA</a>-->
+
+                        </div>
+                    </div>
+                    <div class="carousel-item" >
+                        <img src="images/baner-de-activacion-2.jpg" class="d-block w-100" width="100%" height="139px" >
+                        <div class="carousel-caption d-none d-md-block">
+                            <!--          <h5>Second slide label</h5>-->
+                            <!--          <a href="audiototext.jsp" class="btn btn-light btn-outline-danger" > SUBIR AUDIO</a>
+                                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                      <a href="p52.jsp" class="btn btn-light btn-outline-danger" > TRADUCTOR EN LINEA</a>-->
+                        </div>
+                    </div>
+                </div>
+                <!--    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>-->
+            </div>
         </div>
-      </div>
-      <div class="carousel-item" >
-          <img src="images/baner-de-activacion-2.jpg" class="d-block w-100" width="100%" height="139px" >
-        <div class="carousel-caption d-none d-md-block">
-<!--          <h5>Second slide label</h5>-->
-<!--          <a href="audiototext.jsp" class="btn btn-light btn-outline-danger" > SUBIR AUDIO</a>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <a href="p52.jsp" class="btn btn-light btn-outline-danger" > TRADUCTOR EN LINEA</a>-->
-        </div>
-      </div>
-    </div>
-<!--    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>-->
-  </div>
-</div>
-      
-        <div class="panel panel-default">
+
+        <div class="panel panel-default ">
             <!--<div class="panel-heading" ><h4 align="center" >SPEECH TO TEXT - JUVENTUD GLOBALIZADA</h4><button class="btn btn-info" Data-toggle="tooltip" data-placement="top" title="Ayuda"> <span class="glyphicon glyphicon-question-sign"></span>Ayuda</button> </div>-->
 
             <div class="panel-body">
-               
-                <button id='empezar_grabar' translate="no" class="btn btn-success" data-toggle="modal" data-target="#myModal2" ><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
-                <!--<button id='terminar_grabar'  class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Para la reproducción y la grabación"><span class="glyphicon glyphicon-stop"></span>Terminar de grabar</button>-->
-                <h4><span class="glyphicon glyphicon-music"></span>Nombre del archivo:<%=ruta_archivo%><span class="glyphicon glyphicon-music"></span></h4>
-                <br><br>
-                <br>
-                <table  class="table table-striped">
-                    <tr>
-                        <td>TRANSFERIDO </td><td>TRADUCIDO</td>
-                    </tr>
-                    <tr>  
-
-                        <td><textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 500px;height:300px"></textarea></td>
-                        <td> <textarea placeholder="Aqui estara los traducido" id='traduc' style="width: 500px;height:300px"></textarea></td>
+                <table >
+                    <tr >
+                        <td><h5 Style="margin-top: 20px">Importar Archivo:</h5></td>
+                        <td width="300"><jsp:include page="audiototext.jsp" flush="true"/></td>
+                        <td><h4 Style="margin-top: 20px"><span class="glyphicon glyphicon-music"></span>Nombre del archivo:<%=ruta_archivo%><span class="glyphicon glyphicon-music"></span></h4> </td>
                     </tr>
                 </table>
 
+                <button id='empezar_grabar' translate="no" class="btn btn-outline-light" data-toggle="modal" data-target="#myModal2" ><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
 
+
+                <br><br>
+                <br>
+                <table  class="table table-striped" style="color: white; text-align: center;">
+                    <tr>
+                        <td><h4>TRANSFERIDO</h4> </td><td><h4>TRADUCIDO</h4></td>
+                    </tr>
+                    <tr>  
+                    <style>
+                        .area{
+                            width: 500px;
+                            height:300px;
+
+                            background-color: darkgrey;
+
+                        }
+                    </style>
+                    <td><textarea id='textArea' placeholder="Aqui estara los traducido" class="area" ></textarea></td>
+                    <td><textarea placeholder="Aqui estara los traducido" id='traduc' style="width: 500px;height:300px"></textarea></td>
+                    </tr>
+                </table>
+
+                <script>
+                    var genero="";
+                function genero3() {
+                    genero="US English Male";
+                    console.log(genero);
+                }
+                function genero2() {
+                    genero="US English Female";
+                    console.log(genero);
+                }
+                </script>
 
                 <br><br>
                 <span id="grabando"></span>
                 <h2>Seleccione el Genero de salida del audio, luego Clic en reproducir</h2>
-                <input type="radio" id="genero" name="genero" value="US English Male">Hombre</input>
-                <input type="radio" id="genero" name="genero" value="US English Female">Mujer</input>
+
+                <label for="genero" class="ratio" >
+                    <img src="images/icono-hombre-1.png" onclick="genero3()">
+                </label> 
+
+                <input type="radio" id="genero" name="genero" value="US English Male" style="display: none"></input>
+
+                <label for="genero" class="ratio" >
+                    <img src="images/icono-mujer-1.png" onclick="genero2()"  >
+                </label> 
+
+                <input type="radio" id="genero" name="genero" value="US English Female" style="display: none"></input>
+
                 <button id='reproducir' data-toggle="modal" data-target="#myModal3" onclick="move()"><span class="glyphicon glyphicon-download-alt"></span>EXPORTAR</button>
                 <!--                <button id='parar' ><span class="glyphicon glyphicon-stop"></span>parar</button>
                                 <button id='exportar' ><span class="glyphicon glyphicon-stop"></span>exportar</button>-->
@@ -207,7 +248,7 @@
                                         <td><div id="otro" style="color: white; font-size: 2px"></div></td>
                                     </tr>
                                 </table>-->
-                
+
             </div>
             <script type="text/javascript">
 //                var myvideo;
@@ -220,7 +261,7 @@
                 }
                 function move() {
                     //$('#myModal2').modal({backdrop: 'static', keyboard: false})
-                    var elem="";
+                    var elem = "";
                     var elem = document.getElementById("myBarr");
                     var width = 1;
                     var tiempo = mySound.duration();
@@ -237,17 +278,14 @@
                             $('.modal-backdrop').remove();
                             recorder.stop();
                             responsiveVoice.cancel();
-                           save(soundFile, 'mySound');
-                          
+                            save(soundFile, 'mySound');
+
                         }
                     }
                 }
-                //inicializa el ToolTip
-                $(function () {
-                    $('[data-toggle="tooltip"]').tooltip();
-                });
 
-               //$('#myModal2').modal({backdrop: 'static', keyboard: false});
+
+                //$('#myModal2').modal({backdrop: 'static', keyboard: false});
                 var mic, recorder, soundFile;
                 var statev = 0;
                 var traducido = "";
@@ -261,14 +299,14 @@
                     //soundFormats('mp3', 'ogg');
                     //var rt="audios/<%=ruta_archivo%>";
                     // 
-                    var tipo="<%=ruta_archivo%>";
-                    var tipo2=tipo.substr(-3);
+                    var tipo = "<%=ruta_archivo%>";
+                    var tipo2 = tipo.substr(-3);
                     console.log(tipo2);
-                    
+
 //                    button =createButton('play');
-                   // button.mousePressed(vidLoad);
-                   mySound = loadSound('audios/<%=ruta_archivo%>');
-                   
+                    // button.mousePressed(vidLoad);
+                    mySound = loadSound('audios/<%=ruta_archivo%>');
+
 //    if (tipo2 == "mp3") {
 //                        
 //                      
@@ -282,7 +320,7 @@
                     // connect the mic to the recorder
                     recorder.setInput(mic);
                     soundFile = new p5.SoundFile();
-                    
+
                 }
 
 
@@ -295,7 +333,7 @@
                 speech.continuous = true;
                 speech.interimResults = false;
                 speech.lang = "es-ES";
-                
+
                 speech.onstart = function ()
                 {
                     console.log("inicio speech");
@@ -319,15 +357,15 @@
                     document.getElementById("grabando").innerHTML = "No se reconocio voz alguna, se termino de grabar";
 
                 }
-                var genero = "";
+                
                 document.querySelector('#reproducir').addEventListener('click', function () {
-                    genero = document.querySelector('input[name="genero"]:checked').value;
+//                    genero = document.querySelector('img[name="genero"]:checked').value;
                     console.log(genero);
 
                     responsiveVoice.speak(traducido, genero, {
-                        pitch:1
+                        pitch: 1
                     }, {
-                        rate:1
+                        rate: 1
                     });
                     mic.start();
                     recorder.record(soundFile);
@@ -341,7 +379,7 @@
                     console.log(ti);
 
                     (function me() {
-                       // $('#myModal2').modal({backdrop: 'static', keyboard: false});
+                        // $('#myModal2').modal({backdrop: 'static', keyboard: false});
                         var elem = document.getElementById("myBar");
                         var width = 1;
                         var tiempo = mySound.duration();
@@ -359,7 +397,7 @@
                                 $('#myModal2').modal('hide');
                                 $('.modal-backdrop').remove();
                                 window.setTimeout(otrotras, 4000);
-                                function otrotras(){
+                                function otrotras() {
                                     var ori = document.getElementById("textArea2");
                                     traducido = document.getElementById("otro").innerHTML = ori.textContent;
                                     document.getElementById("traduc").innerHTML = traducido;
@@ -374,7 +412,7 @@
                     })();
 
 
-                                    });
+                });
 
                 document.querySelector('#textArea').addEventListener('onchange', function () {
                     var ooo = document.getElementById("textArea2").innerHTML = speechresult;
@@ -412,8 +450,8 @@
                     } else if (statev === 2) {
                         //soundFile.play(); // play the result!
                         save(soundFile, 'mySound');
-                        
-                        
+
+
                         statev++;
                     }
                 }

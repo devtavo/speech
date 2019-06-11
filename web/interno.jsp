@@ -24,5 +24,5 @@
             
 //            String tipo= request.getParameter("tipo");
             
-        %>
+        %> <%@include  file="audiototext.jsp" %> 
         <%=ruta_archivo %>
