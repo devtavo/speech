@@ -20,8 +20,8 @@
         <title>Voice live</title>
     </head>
     
-    <body onload="setcookie()">
-       
+    <body onload="setcookie()" >
+        <img src="images/crosscurricular-en-blanco-png.png" class="d-block w-100" width="800px" height="760px">
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
