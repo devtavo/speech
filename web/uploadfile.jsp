@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Last-Modified" content="-1">
+       <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript --> 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -45,8 +46,30 @@
         .ratio:hover{
 
             transform: scale(1.3);
+        }
+        .boton{
+            text-decoration:none;
+/*font-weight: 600;
+font-size: 20px;*/
+color:#ffffff;
+/*padding-top:15px;
+padding-bottom:15px;
+padding-left:40px;
+padding-right:40px;*/
+background-color: transparent;
+border-width: 1px;
+border-style: solid;
+border-color: #ffffff; border-radius:5px;
+position: absolute;
 
 
+margin-left: 1450px;
+    
+        }
+        .boton:hover{
+            background-color: white;
+            color: black;
+            
         }
     </style>
     <!--    <body > onload="setcookie()" oncontextmenu="return false" onkeydown="return false">-->
@@ -170,10 +193,12 @@
             <!--<div class="panel-heading" ><h4 align="center" >SPEECH TO TEXT - JUVENTUD GLOBALIZADA</h4><button class="btn btn-info" Data-toggle="tooltip" data-placement="top" title="Ayuda"> <span class="glyphicon glyphicon-question-sign"></span>Ayuda</button> </div>-->
 
             <div class="panel-body">
-                <table >
-                    <tr >
+                <table>
+                    <tr> <td> <a href="nuevospeech.html" class="boton">Regresar a menu</a></td>
                         <td><h5 Style="margin-top: 20px">Importar Archivo:</h5></td>
                         <td width="300"><jsp:include page="audiototext.jsp" flush="true"/></td>
+                       
+                        
                         <td><h4 Style="margin-top: 20px"><span class="glyphicon glyphicon-music"></span>Nombre del archivo:<%=ruta_archivo%><span class="glyphicon glyphicon-music"></span></h4> </td>
                     </tr>
                 </table>
@@ -250,6 +275,11 @@
                                 </table>-->
 
             </div>
+                    
+                   
+                    
+                        
+                    
             <script type="text/javascript">
 //                var myvideo;
 //                let playing = false;
