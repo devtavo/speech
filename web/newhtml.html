@@ -78,7 +78,7 @@
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
-                    includedLanguages: idiomatras,
+                    includedLanguages: 'en,es',layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
                     defaultLanguage: idiomatras}, 'google_translate_element');
             }
         </script>
@@ -125,10 +125,10 @@
             <img src="images/crosscurricular-en-blanco-png.png" width=100% height="100%">        
         </div>
         <div>
-            <button data-toggle="modal" data-target="#myModalspanish"  id="es"  class="btn btn-outline-light btn-block iconos btnmmm" onclick="idiomaes()" value="es">ESPAÑOL</button>
+            <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos btnmmm" onclick="idiomaes()" value="es">ESPAÑOL</button>
         </div
         <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="en"   class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en"style="margin-top: 300px;">INGLES</button>
+            <button data-toggle="modal" data-target="#myModalspanish" id="en" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en"style="margin-top: 300px;">INGLES</button>
         </div>
         <div>
             <button data-toggle="modal" data-target="#myModalspanish" id="en_es" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="en_es" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
@@ -139,36 +139,34 @@
         <div>
             <a href="nuevospeech.html" class="boton">Regresar a menu</a>
         </div>
-<!--<script>
-$('.btnmmm').on('click',function(){
-    $('.modal-body').load('uploadfile.jsp',function(){
-        $('#myModalspanish').modal({show:true});
-    });
-});
-</script>-->
+        
+       
+        <!--<script>
+        $('.btnmmm').on('click',function(){
+            $('.modal-body').load('uploadfile.jsp',function(){
+                $('#myModalspanish').modal({show:true});
+            });
+        });
+        </script>-->
         <script type="text/javascript">
             var idioma = "";
-            var idiomatras="en";
-           function setcookie(){
-                document.cookie = "googtrans=/auto/en; expires=N/A;path=/";
+            var idiomatras = "es";
+            var name = "myModalenglish";
+            function setcookie() {
+                document.cookie = "googtrans=/auto/es; expires=N/A;path=/";
             }
-            
-            function idiomaes(){
-               
+            function idiomaes() {
+
                 idioma = "Spanish Male";
-                idiomatras="es";
-                
-              
-                document.cookie = "googtrans=/auto/"+idiomatras+ "; expires=N/A;path=/";
-             
+                idiomatras = "es";
+                document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
+
             }
-            function idiomaen(){
-               window.location="newhtml.html";
+            function idiomaen() {
+                window.location.reload();
                 idioma = "US English Female";
-                idiomatras="en";
-               window.reload();
-             
-                document.cookie = "googtrans=/auto/"+idiomatras+ "; expires=N/A;path=/";
+                idiomatras = "en";
+                document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
             }
 //            function idiomaen_es() {
 //                idioma = "Spanish Male";
