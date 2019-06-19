@@ -43,11 +43,11 @@
         <script>
 
             function cambiar() {
-                var pdrs = document.getElementById('file').files[0].name;
+                var pdrs = document.getElementById('file2').files[0].name;
                 document.getElementById('info').innerHTML = pdrs;
             }
             function an() {
-                var w = document.getElementById("file").value;
+                var w = document.getElementById("file2").value;
 
                 var z = w.substr(-3);
 

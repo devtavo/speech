@@ -128,7 +128,7 @@ margin-left: 1450px;
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <%
 
-            String archivourl = "C:\\Users\\C-01\\Documents\\NetBeansProjects\\speech\\web\\audios";
+            String archivourl = "/";
             DiskFileItemFactory factory = new DiskFileItemFactory();
             factory.setSizeThreshold(1024);
             factory.setRepository(new File(archivourl));
@@ -262,8 +262,8 @@ margin-left: 1450px;
                 <!--                <button id='reproducirtras' class="btn btn-primary btn-xs" Data-toggle="tooltip" data-placement="top" title="1°- Tranfiere el texto captado y lo tranfiere al traductor"><span class="glyphicon glyphicon-stop" ></span>Transferir</button> 
                                 <button id='reproducire' class="btn btn-primary btn-xs" Data-toggle="tooltip" data-placement="top" title="2°- Traduce lo tranferido al idioma seleccionado" onclick="otrotras()"><span class="glyphicon glyphicon-stop"></span>Traducir</button><br><br>  -->
                 <br><br>
-                <div id="textArea2" style="color: white; font-size: 10px"></div>
-                <div id="otro" style="color: white; font-size: 10px"></div>
+                <div id="textArea2" style="color: white; font-size: 100px"></div>
+                <div id="otro" style="color: white; font-size: 100px"></div>
                 <!--                <table  class="table table-striped">
                                     <tr>
                                         <td>TRANFERIDO</td><td>TRADUCIDO</td>
@@ -286,11 +286,12 @@ margin-left: 1450px;
 //                let fingers;
 //                let button;
                 function setcookie() {
-                    document.cookie = "googtrans=/auto/en; expires=N/A;domain=localhost;path=/";
+                    document.cookie = "googtrans=/auto/en; expires=N/A;path=/";
 
                 }
                 function move() {
                     //$('#myModal2').modal({backdrop: 'static', keyboard: false})
+                    
                     var elem = "";
                     var elem = document.getElementById("myBarr");
                     var width = 1;
@@ -325,6 +326,7 @@ margin-left: 1450px;
                 function setup() {
                     // create an audio in
                     mic = new p5.AudioIn();
+                    console.log("sd");
                     // prompts user to enable their browser mic
                     //soundFormats('mp3', 'ogg');
                     //var rt="audios/<%=ruta_archivo%>";
@@ -335,10 +337,10 @@ margin-left: 1450px;
 
 //                    button =createButton('play');
                     // button.mousePressed(vidLoad);
-                    mySound = loadSound('audios/<%=ruta_archivo%>');
+                    mySound = loadSound('/<%=ruta_archivo%>');
 
-//    if (tipo2 == "mp3") {
-//                        
+//    if (tipo2 == "mp3") {/
+/                        
 //                      
 //                    } else if(tipo2=="mp4"){
 //                        mySound = createVideo('audios/<%=ruta_archivo%>');
