@@ -74,7 +74,13 @@
 
     </style>
     <body  style="background-color: #d71a1f">
-
+        <script>
+            function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'es,en', includedLanguages: 'en', defaultLanguage: 'en'
+                    }, 'google_translate_element2');
+                    }
+        </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
         <!-- Modal -->
@@ -83,7 +89,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                        <h6 class="modal-title" id="myModalLabel"> Sub</h6>
+                        <h6 class="modal-title" id="myModalLabel"> mesa</h6>
                         <button id='empezar_grabar'  translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
                     </div>
                     <div class="modal-body">
@@ -131,7 +137,7 @@
             <img src="images/crosscurricular-en-blanco-png.png" width=100% height="100%">        
         </div>
         <div>
-            <button data-toggle="modal" data-target="#myModalspanish"  id="es"  class="btn btn-outline-light btn-block iconos btnmmm" onclick="idiomaes()" value="es">ESPAÑOL</button>
+            <button   id="es"  class="btn btn-outline-light btn-block iconos btnmmm" onclick="idiomaes()" value="es">ESPAÑOL</button>
         </div
         <div>
             <button data-toggle="modal" data-target="#myModalspanish" id="en"   class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en"style="margin-top: 300px;">INGLES</button>
@@ -154,35 +160,50 @@
         </script>-->
         <script type="text/javascript">
             var idioma = "";
-            var idiomatras = 'en';
+            var idiomatras = '';
             function setcookie() {
                 document.cookie = "googtrans=/auto/en; expires=N/A;path=/";
             }
 
+            jQuery.noConflict();
             function idiomaes() {
-
+               
+                $('#myModalspanish').modal('show');
                 idioma = "Spanish Male";
                 idiomatras = 'es';
-                    (function googleTranslateElementInit() {
-                                    new google.translate.TranslateElement({
-                                        pageLanguage: 'es,en', includedLanguages: idiomatras
-                                    }, 'google_translate_element2');
-                                })();
+                
+                $(document).ready(function () {
+                    var clase = $(".goog-te-combo");
+                    clase.attr("id", "idioma");
+                    var sel = document.getElementById("idioma");
+                    sel.selectedIndex = 1;
+                    $("#idioma").change();
+                });
+
+                // document.ready = document.getElementsByClassName('goog-te-combo').value = 'es';
+
+
+//                 var hh=document.getElementsByClassName("goog-te-combo");
+//                 var hhh=hh;
+//                 
+//                 console.log(hhh);
+
+
 
                 //document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
 
             }
             function idiomaen() {
-               
+
                 idioma = "US English Female";
                 idiomatras = 'en';
-               (function googleTranslateElementInit() {
-                                    new google.translate.TranslateElement({
-                                        pageLanguage: 'es,en', includedLanguages: idiomatras
-                                    }, 'google_translate_element2');
-                                })();
+                (function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'es,en', includedLanguages: idiomatras
+                    }, 'google_translate_element2');
+                })();
 
-               // document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
+                // document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
             }
 //            function idiomaen_es() {
 //                idioma = "Spanish Male";

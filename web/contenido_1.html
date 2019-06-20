@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     
+    </head>
+ 
+    <body>
+        <style>
+            .sell{
+                background-color: skyblue;
+            }
+        </style>
+        <script>
+        $(document).ready(function () {
+            var clase=$(".sell");
+            clase.attr("id","sel");
+           var sele=document.getElementById("sel");
+          sele.selectedIndex=2;
+            
+           
+        });
+        
+//var el=3;
+//        $("#sel").puidropdown('selectValue',el);
+    </script>
+    <div id="cel">
+        <select class="sell">
+            <option value="0">0</option>
+            <option value="1">222</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    </body>
+    
+</html>
