@@ -78,7 +78,7 @@
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
-                    includedLanguages: 'en,es',layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
+                    includedLanguages: 'en,es', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
                     defaultLanguage: idiomatras}, 'google_translate_element');
             }
         </script>
@@ -89,7 +89,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                        <h6 class="modal-title" id="myModalLabel"> Sub</h6>
+                        <h6 class="modal-title" id="myModalLabel"> mesa</h6>
                         <button id='empezar_grabar'  translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
                     </div>
                     <div class="modal-body">
@@ -139,8 +139,8 @@
         <div>
             <a href="nuevospeech.html" class="boton">Regresar a menu</a>
         </div>
-        
-       
+
+
         <!--<script>
         $('.btnmmm').on('click',function(){
             $('.modal-body').load('uploadfile.jsp',function(){
@@ -149,24 +149,59 @@
         });
         </script>-->
         <script type="text/javascript">
+            jQuery.noConflict();
             var idioma = "";
             var idiomatras = "es";
             var name = "myModalenglish";
+            
+            $(document).ready(function () {
+                estado1 = localStorage.getItem("estado");
+                if (estado1 == 1) {
+                    $("#myModalspanish").modal('show');
+                }
+            });
             function setcookie() {
                 document.cookie = "googtrans=/auto/es; expires=N/A;path=/";
+                
             }
             function idiomaes() {
-
+                
                 idioma = "Spanish Male";
                 idiomatras = "es";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
-
+                
+                estado = localStorage.getItem("estado");
+                
+                
+                if (estado == "1") {
+                    
+                    location.reload();
+                    console.log("asd");
+                    
+                    
+                    $(document).ready(
+                            function () {
+                                $('#myModalspanish').modal('show');
+                            });
+                    localStorage.setItem("estado", "2");
+                    
+                }
+                
             }
+            
             function idiomaen() {
-                window.location.reload();
+                
                 idioma = "US English Female";
                 idiomatras = "en";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
+                estado = localStorage.getItem("estado");
+                if (estado == 2) {
+                    
+                    location.reload();
+                    $("#myModalspanish").modal('show');
+                    localStorage.setItem("estado", "1");
+                }
+                
             }
 //            function idiomaen_es() {
 //                idioma = "Spanish Male";
@@ -176,7 +211,7 @@
 //                idioma = "US English Female";
 //                idiomatras="en";
 //            }
-
+            
             var mic, recorder, soundFile;
             var statev = 0;
             var traducido = "";
@@ -198,7 +233,7 @@
                 {
                     if (myRec.resultValue === true) {
                         if (myRec.resultConfidence >= 0.89 && myRec.resultConfidence <= 0.91) {
-
+                            
                             ttt = ttt + myRec.resultString;
                             textArea = document.getElementById("textArea");
                             textArea.innerHTML = " " + ttt;
@@ -209,13 +244,13 @@
                     }
                 }
                 function obtener() {
-
+                    
                     traducido = document.getElementById("textArea2").textContent;
                     tre = tre + traducido;
-
+                    
                     tradd = document.getElementById("traduc");
                     // tradd.innerHTML = tre + " ";
-
+                    
                     responsiveVoice.speak(traducido, idioma, {pitch: 0}, {rate: 0});
                     document.getElementById("textArea2").innerHTML = myRec.resultString;
                 }
@@ -224,28 +259,28 @@
                 recorder.setInput(mic);
                 soundFile = new p5.SoundFile();
             }
-
+            
             var genero = "";
             document.querySelector('#empezar_grabar').addEventListener('click', function () {
                 myRec.start();
             });
-
+            
             document.querySelector('#textArea').addEventListener('onchange', function () {
                 var ooo = document.getElementById("textArea2").innerHTML = speechresult;
             });
-
+            
             var text2 = '';
-
+            
             function tranfe() {
                 var ooo = document.getElementById("textArea2").innerHTML = speechresult;
-
+                
             }
             function otrotras1() {
                 var ori = document.getElementById("textArea2");
                 traducido = document.getElementById("otro").innerHTML = ori.textContent;
                 console.log(ori.textContent);
             }
-
+            
         </script>
 
 
