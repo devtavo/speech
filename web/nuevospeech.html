@@ -27,10 +27,8 @@
                         <div class="carousel-caption d-none d-md-block" style="background-color: black ;opacity: 0.5;"> 
                             <!--          <h5>First slide label</h5>-->
                             <a href="uploadfile.jsp" onclick="locali()" class="btn btn-light btn-outline-danger ">SUBIR AUDIO</a>
-<!--                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-->
-<a href="newhtml.html" onclick="locali()" class="btn btn-light btn-outline-danger offset-4"> TRADUCTOR EN LINEA</a>
+                         
+                            <a href="newhtml.html" onclick="locali()" class="btn btn-light btn-outline-danger offset-4"> TRADUCTOR EN LINEA</a>
 
                         </div>
 
@@ -41,7 +39,7 @@
                             <!--          <h5>Second slide label</h5>-->
 
                             <a href="uploadfile.jsp" onclick="locali()" class="btn btn-light btn-outline-danger"  > SUBIR AUDIO</a>
-                           
+
                             <a href="newhtml.html" onclick="locali()" class="btn btn-light btn-outline-danger offset-4" > TRADUCTOR EN LINEA</a>
 
                         </div>
@@ -60,7 +58,9 @@
             </div>
         </div>
         <script>
-            function locali(){ localStorage.setItem("estado","1");}
-            </script>
+            function locali() {
+                localStorage.setItem("estado", "0");
+            }
+        </script>
 
 </html>

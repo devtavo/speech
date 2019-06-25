@@ -141,77 +141,50 @@
         </div>
 
 
-        <!--<script>
-        $('.btnmmm').on('click',function(){
-            $('.modal-body').load('uploadfile.jsp',function(){
-                $('#myModalspanish').modal({show:true});
-            });
-        });
-        </script>-->
         <script type="text/javascript">
             jQuery.noConflict();
             var idioma = "";
             var idiomatras = "es";
             var name = "myModalenglish";
-            
+
             $(document).ready(function () {
                 estado1 = localStorage.getItem("estado");
                 if (estado1 == 1) {
                     $("#myModalspanish").modal('show');
+                    localStorage.setItem("estado","0");
                 }
             });
             function setcookie() {
                 document.cookie = "googtrans=/auto/es; expires=N/A;path=/";
-                
+
             }
             function idiomaes() {
-                
+
                 idioma = "Spanish Male";
                 idiomatras = "es";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
-                
+
                 estado = localStorage.getItem("estado");
-                
-                
-                if (estado == "1") {
-                    
+                if (estado == "0") {
+
                     location.reload();
-                    console.log("asd");
-                    
-                    
-                    $(document).ready(
-                            function () {
-                                $('#myModalspanish').modal('show');
-                            });
-                    localStorage.setItem("estado", "2");
-                    
+                    localStorage.setItem("estado", "1");
                 }
-                
             }
-            
+
             function idiomaen() {
-                
+
                 idioma = "US English Female";
                 idiomatras = "en";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
                 estado = localStorage.getItem("estado");
-                if (estado == 2) {
-                    
+                if (estado == "0") {
+
                     location.reload();
-                    $("#myModalspanish").modal('show');
                     localStorage.setItem("estado", "1");
                 }
-                
             }
-//            function idiomaen_es() {
-//                idioma = "Spanish Male";
-//                idiomatras="es";
-//            }
-//            function idiomaes_en() {
-//                idioma = "US English Female";
-//                idiomatras="en";
-//            }
-            
+
             var mic, recorder, soundFile;
             var statev = 0;
             var traducido = "";
@@ -233,7 +206,7 @@
                 {
                     if (myRec.resultValue === true) {
                         if (myRec.resultConfidence >= 0.89 && myRec.resultConfidence <= 0.91) {
-                            
+
                             ttt = ttt + myRec.resultString;
                             textArea = document.getElementById("textArea");
                             textArea.innerHTML = " " + ttt;
@@ -244,13 +217,13 @@
                     }
                 }
                 function obtener() {
-                    
+
                     traducido = document.getElementById("textArea2").textContent;
                     tre = tre + traducido;
-                    
-                    tradd = document.getElementById("traduc");
+
+//                    tradd = document.getElementById("traduc");
                     // tradd.innerHTML = tre + " ";
-                    
+
                     responsiveVoice.speak(traducido, idioma, {pitch: 0}, {rate: 0});
                     document.getElementById("textArea2").innerHTML = myRec.resultString;
                 }
@@ -259,28 +232,28 @@
                 recorder.setInput(mic);
                 soundFile = new p5.SoundFile();
             }
-            
+
             var genero = "";
             document.querySelector('#empezar_grabar').addEventListener('click', function () {
                 myRec.start();
             });
-            
+
             document.querySelector('#textArea').addEventListener('onchange', function () {
                 var ooo = document.getElementById("textArea2").innerHTML = speechresult;
             });
-            
+
             var text2 = '';
-            
+
             function tranfe() {
                 var ooo = document.getElementById("textArea2").innerHTML = speechresult;
-                
+
             }
             function otrotras1() {
                 var ori = document.getElementById("textArea2");
                 traducido = document.getElementById("otro").innerHTML = ori.textContent;
                 console.log(ori.textContent);
             }
-            
+
         </script>
 
 
