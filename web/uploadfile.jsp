@@ -128,7 +128,7 @@
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <%
 
-            String archivourl = "/";
+            String archivourl = "./audios/";
             DiskFileItemFactory factory = new DiskFileItemFactory();
             factory.setSizeThreshold(1024);
             factory.setRepository(new File(archivourl));
@@ -327,18 +327,18 @@
                 function setup() {
                     // create an audio in
                     mic = new p5.AudioIn();
-                    console.log("sd");
+                  
                     // prompts user to enable their browser mic
                     //soundFormats('mp3', 'ogg');
                     //var rt="audios/<%=ruta_archivo%>";
                     // 
-                    var tipo = "<%=ruta_archivo%>";
+                    var tipo = "./<%=ruta_archivo%>";
                     var tipo2 = tipo.substr(-3);
                     console.log(tipo2);
 
 //                    button =createButton('play');
                     // button.mousePressed(vidLoad);
-                    mySound = loadSound('/<%=ruta_archivo%>');
+                    mySound = loadSound('./<%=ruta_archivo%>');
 
 //    if (tipo2 == "mp3") {/
                                       

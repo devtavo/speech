@@ -89,27 +89,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                        <h6 class="modal-title" id="myModalLabel"> mesa</h6>
+                        <h6 class="modal-title" id="myModalLabel"></h6>
                         <button id='empezar_grabar'  translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
                     </div>
                     <div class="modal-body">
-                        <!--contenido-->
-
-                        <div class="panel panel-default">
+                       <div class="panel panel-default">
                             <div class="panel-body" >
-
-                                <br><br>
-                                <br>
-                                <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 1506px;height:500px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
-                                <br><br>
-                                <!--           
-                                <span id="grabando"></span>
-                                            <h2>Seleccione el Genero de salida del audio, luego Clic en reproducir</h2>
-                                            <input type="radio" id="genero" name="genero" value="US English Male">Hombre</input>
-                                            <input type="radio" id="genero" name="genero" value="US English Female">Mujer</input>
-                                            <button id='reproducir' data-toggle="modal" data-target="#myModal2" onclick="move()"><span class="glyphicon glyphicon-download-alt"></span>EXPORTAR</button>
-                                            <br><br>-->
-                                <br><br>
+  
+                                <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 1506px;height:700px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
+                                
                                 <div id="textArea2"  style="color: black; font-size: 10px"></div>
                                 <div id="otro" style="color: black; font-size: 10px"></div>
                             </div></div>    
@@ -128,13 +116,13 @@
             <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos btnmmm" onclick="idiomaes()" value="es">ESPAÑOL</button>
         </div
         <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="en" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en"style="margin-top: 300px;">INGLES</button>
+            <button data-toggle="modal" data-target="#myModalspanish" id="en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en" style="margin-top: 300px;">INGLES</button>
         </div>
         <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="en_es" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="en_es" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
+            <button data-toggle="modal" data-target="#myModalspanish" id="en_es" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="es" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
         </div>
         <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="es_en"class="btn btn-outline-light btn-block iconos" onclick="idiomaen()" value="es_en" style="margin-top: 500px;">ESPAÑOL - INGLES</button>
+            <button data-toggle="modal" data-target="#myModalspanish" id="es_en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()" value="en" style="margin-top: 500px;">ESPAÑOL - INGLES</button>
         </div>
         <div>
             <a href="nuevospeech.html" class="boton">Regresar a menu</a>
@@ -152,6 +140,8 @@
                 if (estado1 == 1) {
                     $("#myModalspanish").modal('show');
                     localStorage.setItem("estado","0");
+                     console.log(idi);
+                    
                 }
             });
             function setcookie() {
@@ -159,7 +149,7 @@
 
             }
             function idiomaes() {
-
+                       
                 idioma = "Spanish Male";
                 idiomatras = "es";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
