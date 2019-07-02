@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="Last-Modified" content="-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript --> 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -30,7 +31,7 @@
         }
         .iconos{
             width: 350px;
-            margin-left: 600px;
+            margin-left: 100px;
             margin-top: 200px;
             position: absolute;
             font-size: 25px;
@@ -38,6 +39,65 @@
             border-radius: 50px;
 
 
+        }
+        @media (max-width: 320px) {
+            .iconos{
+                width: 150px;
+                margin-left: 10px;
+                margin-top: 200px;
+                position: absolute;
+                font-size: 7px;
+                font-weight: bold;
+                border-radius: 50px;
+
+
+            } 
+        }
+
+
+        @media (min-width: 768px) { 
+            .iconos{
+                width: 350px;
+                margin-left: auto;
+                margin-top: 200px;
+                position: absolute;
+                font-size: 25px;
+                font-weight: bold;
+                border-radius: 50px;
+
+
+            }
+
+        }
+
+
+        @media (min-width: 992px) {  
+            .iconos{
+                width: 350px;
+                margin-left: auto;
+                margin-top: 200px;
+                position: absolute;
+                font-size: 25px;
+                font-weight: bold;
+                border-radius: 50px;
+
+
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+            .iconos{
+                width: 350px;
+                margin-left: 600px;
+                margin-top: 200px;
+                position: absolute;
+                font-size: 25px;
+                font-weight: bold;
+                border-radius: 50px;
+
+
+            }
         }
         .modal-dialog {
             margin: 20px;
@@ -72,8 +132,9 @@
 
         }
 
+
     </style>
-    <body onload="setcookie()" style="background-color: #d71a1f">
+    <body onload="setcookie()"  style="background-color: #d71a1f">
 
         <script type="text/javascript">
             function googleTranslateElementInit() {
@@ -93,11 +154,11 @@
                         <button id='empezar_grabar'  translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
                     </div>
                     <div class="modal-body">
-                       <div class="panel panel-default">
+                        <div class="panel panel-default">
                             <div class="panel-body" >
-  
+
                                 <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 1506px;height:700px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
-                                
+
                                 <div id="textArea2"  style="color: black; font-size: 10px"></div>
                                 <div id="otro" style="color: black; font-size: 10px"></div>
                             </div></div>    
@@ -112,18 +173,25 @@
         <div class="fondo" >
             <img src="images/crosscurricular-en-blanco-png.png" width=100% height="100%">        
         </div>
-        <div>
-            <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos btnmmm" onclick="idiomaes()" value="es">ESPAÑOL</button>
-        </div
-        <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en" style="margin-top: 300px;">INGLES</button>
+
+        <div class="row">
+            <div>
+                <div class="col">
+                    <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos"  onclick="idiomaes(),screen()" value="es">ESPAÑOL</button>
+                </div>
+
+                <div>
+                    <button data-toggle="modal" data-target="#myModalspanish" id="en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en" style="margin-top: 300px;">INGLES</button>
+                </div>
+                <div>
+                    <button data-toggle="modal" data-target="#myModalspanish" id="en_es" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="es" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
+                </div>
+                <div>
+                    <button data-toggle="modal" data-target="#myModalspanish" id="es_en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()" value="en" style="margin-top: 500px;">ESPAÑOL - INGLES</button>
+                </div>
+            </div>
         </div>
-        <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="en_es" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="es" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
-        </div>
-        <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="es_en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()" value="en" style="margin-top: 500px;">ESPAÑOL - INGLES</button>
-        </div>
+
         <div>
             <a href="nuevospeech.html" class="boton">Regresar a menu</a>
         </div>
@@ -139,17 +207,35 @@
                 estado1 = localStorage.getItem("estado");
                 if (estado1 == 1) {
                     $("#myModalspanish").modal('show');
-                    localStorage.setItem("estado","0");
-                     console.log(idi);
-                    
+                    localStorage.setItem("estado", "0");
+                    console.log(idi);
+                        
                 }
             });
             function setcookie() {
                 document.cookie = "googtrans=/auto/es; expires=N/A;path=/";
-
+                var w = 0;
+                w = screen.width;
+                var h = 0;
+                h = screen.height;
+                console.log(w);
+                document.getElementById("es").innerHTML=w;
+                        
             }
+            
+    $(window).load(
+            function() {
+                var w = 0;
+                var h = 0;
+                w = screen.availWidth;
+                h = $(window).width();
+                
+                console.log(h);
+            }
+            );        
+    
             function idiomaes() {
-                       
+
                 idioma = "Spanish Male";
                 idiomatras = "es";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
@@ -211,7 +297,7 @@
                     traducido = document.getElementById("textArea2").textContent;
                     tre = tre + traducido;
 
-//                    tradd = document.getElementById("traduc");
+                    //                    tradd = document.getElementById("traduc");
                     // tradd.innerHTML = tre + " ";
 
                     responsiveVoice.speak(traducido, idioma, {pitch: 0}, {rate: 0});
