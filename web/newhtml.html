@@ -105,6 +105,7 @@
         }
         .modal-content{
             width: 1550px;
+
             margin-top: 50px;
         }
         .boton{
@@ -151,7 +152,7 @@
                     <div class="modal-header">
                         <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                         <h6 class="modal-title" id="myModalLabel"></h6>
-                        <button id='empezar_grabar'  translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
+                        <button id='empezar_grabar' data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez" translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" ></span> Empezar a grabar</button>
                     </div>
                     <div class="modal-body">
                         <div class="panel panel-default">
@@ -159,8 +160,8 @@
 
                                 <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 1506px;height:700px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
 
-                                <div id="textArea2"  style="color: black; font-size: 10px"></div>
-                                <div id="otro" style="color: black; font-size: 10px"></div>
+                                <div id="textArea2"  style="color: black; font-size: 20px"></div>
+                                <div id="otro" style="color: black; font-size: 20px"></div>
                             </div></div>    
 
 
@@ -177,7 +178,7 @@
         <div class="row">
             <div>
                 <div class="col">
-                    <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos"  onclick="idiomaes(),screen()" value="es">ESPAÑOL</button>
+                    <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos"  onclick="idiomaes(), screen()" value="es">ESPAÑOL</button>
                 </div>
 
                 <div>
@@ -203,43 +204,34 @@
             var idiomatras = "es";
             var name = "myModalenglish";
 
+
+
             $(document).ready(function () {
                 estado1 = localStorage.getItem("estado");
                 if (estado1 == 1) {
                     $("#myModalspanish").modal('show');
                     localStorage.setItem("estado", "0");
-                    console.log(idi);
-                        
+                    idioma=localStorage.getItem("idioma");
+
                 }
             });
+
             function setcookie() {
                 document.cookie = "googtrans=/auto/es; expires=N/A;path=/";
-                var w = 0;
-                w = screen.width;
-                var h = 0;
-                h = screen.height;
-                console.log(w);
-                document.getElementById("es").innerHTML=w;
                         
-            }
-            
-    $(window).load(
-            function() {
-                var w = 0;
-                var h = 0;
-                w = screen.availWidth;
-                h = $(window).width();
-                
-                console.log(h);
-            }
-            );        
-    
-            function idiomaes() {
 
-                idioma = "Spanish Male";
+            }
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+
+            function idiomaes() {
+            
+                localStorage.setItem("idioma","Spanish Latin American Female");
+                
                 idiomatras = "es";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
-
+                    
                 estado = localStorage.getItem("estado");
                 if (estado == "0") {
 
@@ -247,10 +239,11 @@
                     localStorage.setItem("estado", "1");
                 }
             }
-
+            
             function idiomaen() {
 
-                idioma = "US English Female";
+                ///idioma = "US English Female";
+                localStorage.setItem("idioma","US English Female");
                 idiomatras = "en";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
                 estado = localStorage.getItem("estado");
@@ -288,7 +281,7 @@
                             textArea.innerHTML = " " + ttt;
                             document.getElementById("textArea2").innerHTML = myRec.resultString;
                             myRec.resultString = "";
-                            window.setTimeout(obtener, 800);
+                            window.setTimeout(obtener, 1000);
                         }
                     }
                 }
@@ -299,7 +292,7 @@
 
                     //                    tradd = document.getElementById("traduc");
                     // tradd.innerHTML = tre + " ";
-
+                     
                     responsiveVoice.speak(traducido, idioma, {pitch: 0}, {rate: 0});
                     document.getElementById("textArea2").innerHTML = myRec.resultString;
                 }
