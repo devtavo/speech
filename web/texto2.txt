@@ -1,0 +1,7 @@
+git init
+git add .
+git commit -am "Initialized"
+heroku login
+heroku plugins:install heroku-cli-deploy
+heroku war:deploy dist/speechnuevo.war --app speechvj
+heroku open --app speechvj
