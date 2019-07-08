@@ -194,7 +194,7 @@
 
             <div class="panel-body">
                 <table>
-                    <tr> <td> <a href="nuevospeech.html" class="boton">Regresar a menu</a></td>
+                    <tr> <td> <a href="index.html" class="boton">Regresar a menu</a></td>
                         <td><h5 Style="margin-top: 20px">Importar Archivo:</h5></td>
                         <td width="300"><jsp:include page="audiototext.jsp" flush="true"/></td>
 

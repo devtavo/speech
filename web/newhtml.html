@@ -104,7 +104,7 @@
             width: 100%; 
         }
         .modal-content{
-            width: 1550px;
+            width: 1200px;
 
             margin-top: 50px;
         }
@@ -158,7 +158,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body" >
 
-                                <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 1506px;height:700px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
+                                <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 1200px;height:700px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
 
                                 <div id="textArea2"  style="color: black; font-size: 20px"></div>
                                 <div id="otro" style="color: black; font-size: 20px"></div>
@@ -171,6 +171,31 @@
             </div>
         </div>
 
+
+        <div class="modal fade" id="myModalspanish2" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                        <h6 class="modal-title" id="myModalLabel"></h6>
+                        <button id='empezar_grabar2' data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez" translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" ></span> Empezar a grabar</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+                            <div class="panel-body" >
+
+                                <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea2' style="width: 1200px;height:700px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
+
+                                <div id="textArea22"  style="color: black; font-size: 20px"></div>
+                                <div id="otro2" style="color: black; font-size: 20px"></div>
+                            </div></div>    
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="fondo" >
             <img src="images/crosscurricular-en-blanco-png.png" width=100% height="100%">        
         </div>
@@ -178,23 +203,23 @@
         <div class="row">
             <div>
                 <div class="col">
-                    <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos"  onclick="idiomaes(), screen()" value="es">ESPAÑOL</button>
+                    <button data-toggle="modal" data-target="#myModalspanish"  id="es" name="ass" class="btn btn-outline-light btn-block iconos"  onclick="idiomaes()" value="es">ESPAÑOL</button>
                 </div>
 
                 <div>
                     <button data-toggle="modal" data-target="#myModalspanish" id="en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en" style="margin-top: 300px;">INGLES</button>
                 </div>
                 <div>
-                    <button data-toggle="modal" data-target="#myModalspanish" id="en_es" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="es" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
+                    <button data-toggle="modal" data-target="#myModalspanish" id="en2" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="en2" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
                 </div>
                 <div>
-                    <button data-toggle="modal" data-target="#myModalspanish" id="es_en" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()" value="en" style="margin-top: 500px;">ESPAÑOL - INGLES</button>
+                    <button data-toggle="modal" on data-target="#myModalspanish" id="en3" name="ass" class="btn btn-outline-light btn-block iconos" onclick="idiomaen()" value="en2" style="margin-top: 500px;">ESPAÑOL - INGLES</button>
                 </div>
             </div>
         </div>
 
         <div>
-            <a href="nuevospeech.html" class="boton">Regresar a menu</a>
+            <a href=index.html" class="boton">Regresar a menu</a>
         </div>
 
 
@@ -203,47 +228,41 @@
             var idioma = "";
             var idiomatras = "es";
             var name = "myModalenglish";
-
-
-
             $(document).ready(function () {
                 estado1 = localStorage.getItem("estado");
+        
                 if (estado1 == 1) {
                     $("#myModalspanish").modal('show');
                     localStorage.setItem("estado", "0");
-                    idioma=localStorage.getItem("idioma");
+                    idioma = localStorage.getItem("idioma");
 
                 }
+
+
             });
 
             function setcookie() {
                 document.cookie = "googtrans=/auto/es; expires=N/A;path=/";
-                        
-
             }
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip();
             });
 
             function idiomaes() {
-            
-                localStorage.setItem("idioma","Spanish Latin American Female");
-                
+                localStorage.setItem("idioma", "Spanish Latin American Female");
                 idiomatras = "es";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
-                    
                 estado = localStorage.getItem("estado");
-                if (estado == "0") {
 
+                if (estado == "0") {
                     location.reload();
                     localStorage.setItem("estado", "1");
                 }
             }
-            
-            function idiomaen() {
 
-                ///idioma = "US English Female";
-                localStorage.setItem("idioma","US English Female");
+            function idiomaen() {
+                
+                localStorage.setItem("idioma", "US English Female");
                 idiomatras = "en";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
                 estado = localStorage.getItem("estado");
@@ -254,74 +273,190 @@
                 }
             }
 
-            var mic, recorder, soundFile;
-            var statev = 0;
-            var traducido = "";
-            //////////////////////p5.js
-            var myRec = new p5.SpeechRec();
-            var tipo = 0;
-            function setup() {
-                // create an audio in
-                mic = new p5.AudioIn();
-                myRec.continuous = true;
-                myRec.interimResults = true;
-                myRec.defaultLanguage = "en-US";
-                myRec.onResult = showResult;
-                var ttt = "";
-                var textArea = "";
-                var tradd = "";
-                var tre = "";
-                function showResult()
-                {
-                    if (myRec.resultValue === true) {
-                        if (myRec.resultConfidence >= 0.89 && myRec.resultConfidence <= 0.91) {
 
-                            ttt = ttt + myRec.resultString;
-                            textArea = document.getElementById("textArea");
-                            textArea.innerHTML = " " + ttt;
-                            document.getElementById("textArea2").innerHTML = myRec.resultString;
-                            myRec.resultString = "";
-                            window.setTimeout(obtener, 1000);
-                        }
+            var statev = 0;
+            var traducido2 = "";
+            var traducido = "";
+            var speech = new webkitSpeechRecognition();
+            var speech2 = new webkitSpeechRecognition();
+            speech2.continuous = true;
+            speech2.interimResults = true;
+            speech2.lang = "es-Es";
+
+            speech.continuous = true;
+            speech.interimResults = true;
+            speech.lang = "es-Es";
+            speech.maxAlternatives = 1;
+
+
+            var ttt = "";
+            var text2 = '';
+            var textArea = '';
+            var ttt2 = "";
+            var text22 = '';
+            var textArea2 = '';
+            //            speech.onresult = function (event)
+            //            {
+            //                var textArea = document.getElementById("textArea");
+            //                textArea.innerHTML += event.results[event.results.length - 1][0].transcript;
+            //                document.getElementById("textArea2").innerHTML = textArea.textContent;
+            //            };
+            var interim_transcript = '';
+
+            text2 = document.getElementById("textArea2");
+            textArea = document.getElementById("textArea");
+            class Queue {
+                constructor() {
+                    this.queue = [];
+                }
+
+                enqueue(element) {
+                    this.queue.push(element);
+                    return this.queue;
+                }
+
+                dequeue() {
+                    return this.queue.shift();
+                }
+
+                peek() {
+                    return this.queue[0];
+                }
+
+                size() {
+                    return this.queue.length;
+                }
+
+                isEmpty() {
+                    return this.queue.length === 0;
+                }
+
+                print() {
+                    return this.queue;
+                }
+            }
+
+            const queue = new Queue();
+            const  queue2 = new Queue();
+            var tra = "";
+            var test = 0;
+            speech.onresult = function (event) {
+
+
+                var len = event.results.length - 1;
+
+                if (event.results[len].isFinal) {
+                    var a = "";
+                    a = event.results[len][0].transcript;
+                    queue.enqueue(a);
+                    text2.innerHTML = queue.peek();
+                    queue.dequeue();
+                   
+                    test = 1;
+                    if (test == 1) {
+                        test = 0;
+                        window.setTimeout('obtener()', 2000);
+
                     }
                 }
-                function obtener() {
 
-                    traducido = document.getElementById("textArea2").textContent;
-                    tre = tre + traducido;
 
-                    //                    tradd = document.getElementById("traduc");
-                    // tradd.innerHTML = tre + " ";
-                     
-                    responsiveVoice.speak(traducido, idioma, {pitch: 0}, {rate: 0});
-                    document.getElementById("textArea2").innerHTML = myRec.resultString;
+            };
+
+
+
+            function obtener() {
+                
+                traducido = document.getElementById("textArea2").textContent;
+                queue2.enqueue(traducido);
+                console.log(traducido);
+                tra = queue2.peek();
+                queue2.dequeue();
+                textArea.innerHTML += tra;
+                responsiveVoice.speak(tra, idioma, {pitch: 0}, {rate: 0});
+
+            }
+
+
+            speech2.onresult = function (event2) {
+                var interim_transcript2 = '';
+
+                for (var i = event2.resultIndex; i < event2.results.length; ++i) {
+                    if (event2.results[i].isFinal) {
+                        final_transcript2 += event2.results[i][0].transcript;
+                    } else {
+                        interim_transcript2 += event2.results[i][0].transcript;
+                    }
+
+                    textArea2 = document.getElementById("textArea2");
+                    textArea2.innerHTML = " " + final_transcript2;
+                    text22 = document.getElementById("textArea22");
+                    text22.innerHTML = interim_transcript2;
+
+                    console.log(final_transcript2);
+                    //                       console.log(interim_transcript);
+                    text22 = document.getElementById("textArea2");
+                    text22.innerHTML = interim_transcript2;
+                    //                       console.log("resultado"+event.results[event.results.length-1][0].transcript);
                 }
-                recorder = new p5.SoundRecorder();
-                // connect the mic to the recorder
-                recorder.setInput(mic);
-                soundFile = new p5.SoundFile();
-            }
 
-            var genero = "";
+
+            };
+
+            //////////////////////p5.js
+            //             var myRec = new p5.SpeechRec();
+            //            function setup() {
+            //                
+            //                myRec.continuous = true;
+            //                myRec.interimResults = true;
+            //                myRec.defaultLanguage = "en-US";
+            //                myRec.onResult = showResult;
+            //                var ttt = "";
+            //                var textArea = "";
+            //                var tradd = "";
+            //                var tre = "";
+            //                function showResult()
+            //                {
+            //                    if (myRec.resultValue === true) {
+            //                        if (myRec.resultConfidence >= 0.89 && myRec.resultConfidence <= 0.91) {
+            //
+            //                            ttt = ttt + myRec.resultString;
+            //                            textArea = document.getElementById("textArea");
+            //                            textArea.innerHTML = " " + ttt;
+            //                            document.getElementById("textArea2").innerHTML = myRec.resultString;
+            //                            myRec.resultString = "";
+            //                            window.setTimeout(obtener, 1000);
+            //                        }
+            //                    }
+            //                }
+            //                function obtener() {
+            //
+            //                    traducido = document.getElementById("textArea2").textContent;
+            //                    tre = tre + traducido;
+            //
+            //                    //                    tradd = document.getElementById("traduc");
+            //                    // tradd.innerHTML = tre + " ";
+            //
+            //                    responsiveVoice.speak(traducido, idioma, {pitch: 0}, {rate: 0});
+            //                    document.getElementById("textArea2").innerHTML = myRec.resultString;
+            //                }
+            ////                recorder = new p5.SoundRecorder();
+            //                // connect the mic to the recorder
+            ////                recorder.setInput(mic);
+            ////                soundFile = new p5.SoundFile();
+            //            }
+
+            //            var genero = "";
             document.querySelector('#empezar_grabar').addEventListener('click', function () {
-                myRec.start();
+                final_transcript = "";
+                speech.start();
             });
 
-            document.querySelector('#textArea').addEventListener('onchange', function () {
-                var ooo = document.getElementById("textArea2").innerHTML = speechresult;
-            });
+            //            document.querySelector('#textArea').addEventListener('onchange', function () {
+            //                var ooo = document.getElementById("textArea2").innerHTML = speechresult;
+            //            });
 
-            var text2 = '';
 
-            function tranfe() {
-                var ooo = document.getElementById("textArea2").innerHTML = speechresult;
-
-            }
-            function otrotras1() {
-                var ori = document.getElementById("textArea2");
-                traducido = document.getElementById("otro").innerHTML = ori.textContent;
-                console.log(ori.textContent);
-            }
 
         </script>
 
