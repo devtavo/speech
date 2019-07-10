@@ -132,7 +132,10 @@
             color: black;
 
         }
+        .ratio:hover{
 
+            transform: scale(1.3);
+        }
 
     </style>
     <body onload="setcookie()"  style="background-color: #d71a1f">
@@ -152,6 +155,17 @@
                     <div class="modal-header">
                         <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                         <h6 class="modal-title" id="myModalLabel"></h6>
+                        <label for="genero" class="ratio" >
+                            <img src="images/icono-hombre-1.png" onclick="genero3()">
+                        </label> 
+
+                        <input type="radio" id="genero" name="genero" value="US English Male" style="display: none"></input>
+
+                        <label for="genero" class="ratio" >
+                            <img src="images/icono-mujer-1.png" onclick="genero2()"  >
+                        </label> 
+
+                        <input type="radio" id="genero" name="genero" value="US English Female" style="display: none"></input>
                         <button id='empezar_grabar' data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez" translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" ></span> Empezar a grabar</button>
                     </div>
                     <div class="modal-body">
@@ -228,13 +242,38 @@
             var idioma = "";
             var idiomatras = "es";
             var name = "myModalenglish";
+            var genero = "";
+            function genero3() {
+                var key=localStorage.getItem("key");
+                if(key=="español"){
+                  idioma="Spanish Latin American Male";
+                  console.log(idioma);
+                }
+                if(key=="ingles"){
+                    idioma="US English Male";
+                    console.log(idioma);
+                }
+                
+            }
+            function genero2() {
+                var key=localStorage.getItem("key");
+                if(key=="español"){
+                  idioma="Spanish Latin American Female";
+                  console.log(idioma);
+                }
+                if(key=="ingles"){
+                    idioma="US English Female";
+                    console.log(idioma);
+                }
+            }
+
             $(document).ready(function () {
                 estado1 = localStorage.getItem("estado");
-        
+
                 if (estado1 == 1) {
                     $("#myModalspanish").modal('show');
                     localStorage.setItem("estado", "0");
-                    idioma = localStorage.getItem("idioma");
+                    //idioma = localStorage.getItem("idioma");
 
                 }
 
@@ -249,11 +288,11 @@
             });
 
             function idiomaes() {
-                localStorage.setItem("idioma", "Spanish Latin American Female");
+               // localStorage.setItem("idioma", "Spanish Latin American Female");
                 idiomatras = "es";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
                 estado = localStorage.getItem("estado");
-
+                localStorage.setItem("key","español");    
                 if (estado == "0") {
                     location.reload();
                     localStorage.setItem("estado", "1");
@@ -261,11 +300,12 @@
             }
 
             function idiomaen() {
-                
-                localStorage.setItem("idioma", "US English Female");
+
+                //localStorage.setItem("idioma", "US English Female");
                 idiomatras = "en";
                 document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
                 estado = localStorage.getItem("estado");
+                localStorage.setItem("key","ingles");    
                 if (estado == "0") {
 
                     location.reload();
@@ -351,7 +391,7 @@
                     queue.enqueue(a);
                     text2.innerHTML = queue.peek();
                     queue.dequeue();
-                   
+
                     test = 1;
                     if (test == 1) {
                         test = 0;
@@ -366,7 +406,7 @@
 
 
             function obtener() {
-                
+
                 traducido = document.getElementById("textArea2").textContent;
                 queue2.enqueue(traducido);
                 console.log(traducido);
