@@ -76,9 +76,12 @@
             height:300px;
             background-color: darkgrey;
         }
+        .selidioma{
+            color: black;
+        }
     </style>
 
-    <body onload="setcookie()" style="background-color: #304597; color: white;">
+    <body  style="background-color: #304597; color: white;">
 
         <!-- Modal -->
         <div class="modal fade" id="myModal2" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -86,12 +89,13 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                        <h4 class="modal-title" id="myModalLabel">Progreso.....</h4>
+                        <h4 class="modal-title selidioma" translate="false" id="myModalLabel">Eleccion del idioma del video</h4>
                     </div>
                     <div class="modal-body">
 
-                        <div id="myProgress">
-                            <div id="myBar"></div>
+                        <div id="idiomaelec">
+                            <button id="idio" name="idio" class="btn btn-success btn-block iconos"  onclick="idiomaes()" value="es">ESPAÑOL</button>
+                            <button id="idio" name="idio" class="btn btn-success btn-block iconos"  onclick="idiomaen()" value="es">INGLES</button>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -100,32 +104,32 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="myModal3" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                        <h4 class="modal-title" id="myModalLabel">Progreso.....</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        <div id="myProgresss">
-                            <div id="myBarr"></div>
+        <!--        <div class="modal fade" id="myModal3" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Progreso.....</h4>
+                            </div>
+                            <div class="modal-body">
+        
+                                <div id="myProgresss">
+                                    <div id="myBarr"></div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="cerrar_prog" disabled="true" class="btn btn-default" data-dismiss="modal" onclick="tranfe()">Close</button>
+        
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <!--<button type="button" id="cerrar_prog" disabled="true" class="btn btn-default" data-dismiss="modal" onclick="tranfe()">Close</button>-->
-
-                    </div>
-                </div>
-            </div>
-        </div>
+                </div>-->
 
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
-                    includedLanguages: 'en',
-                    defaultLanguage: 'en'}, 'google_translate_element');
+                    includedLanguages: 'en,es', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT,
+                    defaultLanguage: idiomatras}, 'google_translate_element');
             }
         </script>
 
@@ -239,6 +243,12 @@
                 </table>
 
                 <script>
+                    jQuery.noConflict();
+            var idioma = "";
+            var idiomatras = "es";
+            var name = "myModalenglish";
+            var genero = "";
+                   
                     var genero = "";
                     function genero3() {
                         genero = "US English Male";
@@ -248,6 +258,39 @@
                         genero = "US English Female";
                         console.log(genero);
                     }
+                    $(document).ready(function () {
+                        estado1 = localStorage.getItem("estado");
+                        if (estado1==0){
+                            $("#myModal2").modal('show');
+                        }
+                    });
+
+                    function idiomaes() {
+                        // localStorage.setItem("idioma", "Spanish Latin American Female");
+                        idiomatras = "es";
+                        document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
+//                        estado = localStorage.getItem("estado");
+                        localStorage.setItem("key", "español");
+//                        if (estado == "0") {
+                            location.reload();
+                            localStorage.setItem("estado", "1");
+//                        }
+                    }
+
+                    function idiomaen() {
+
+                        //localStorage.setItem("idioma", "US English Female");
+                        idiomatras = "en";
+                        document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
+//                        estado = localStorage.getItem("estado");
+                        localStorage.setItem("key", "ingles");
+//                        if (estado == "0") {
+
+                            location.reload();
+                            localStorage.setItem("estado", "1");
+//                        }
+                    }
+
                 </script>
 
                 <br><br>
@@ -274,7 +317,7 @@
                 <!--                <button id='reproducirtras' class="btn btn-primary btn-xs" Data-toggle="tooltip" data-placement="top" title="1°- Tranfiere el texto captado y lo tranfiere al traductor"><span class="glyphicon glyphicon-stop" ></span>Transferir</button> 
                                 <button id='reproducire' class="btn btn-primary btn-xs" Data-toggle="tooltip" data-placement="top" title="2°- Traduce lo tranferido al idioma seleccionado" onclick="otrotras()"><span class="glyphicon glyphicon-stop"></span>Traducir</button><br><br>  -->
                 <br><br>
-                
+
                 <div id="otro" style="color: white; font-size: 2px"></div>
                 <div id="bb" style="color: #304597; font-size: 1px">
                 </div>
@@ -520,7 +563,7 @@
                     var max2 = wordd.length;
                     var box = document.getElementById("srt");
                     var x = 0;
-                    
+
 
                     for (var o = 1; o <= max / 2; o++) {
                         box.innerHTML += o + "\n";

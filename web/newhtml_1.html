@@ -17,274 +17,102 @@
         <title>Voice live</title>
     </head>
     <style>
-        .fondo{
-
-            margin-top:300px;
-            margin-left: 300px;
-            padding: 5px 10px;
-            background-color: #d71a1f;
-
-            position: absolute;
-            opacity: 0.3;
-
-        }
-        .iconos{
-            width: 350px;
-            margin-left: 600px;
-            margin-top: 200px;
-            position: absolute;
-            font-size: 25px;
+        #caption {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            bottom:30px; /* space for the video controls */
+            left: 0;
+            text-align: center;
+            font-family: sans-serif;
             font-weight: bold;
-            border-radius: 50px;
-
-
+            color: white;
+            text-shadow: black 1px 1px 3px;
+            padding-bottom: .5em;
         }
-        .modal-dialog {
-            margin: 20px;
-            width: 100%; 
+        #transcript span {display:table-row;}
+        #transcript [data-begin]:before{
+            content: " [" attr(data-begin) "s-" attr(data-end)"s]   ";
+            font-size:80%;
+            display:table-cell;
+            padding-right:1em;
         }
-        .modal-content{
-            width: 1550px;
-            margin-top: 50px;
-        }
-        .boton{
-            text-decoration:none;
-            /*font-weight: 600;
-            font-size: 20px;*/
-            color:#ffffff;
-            /*padding-top:15px;
-            padding-bottom:15px;
-            padding-left:40px;
-            padding-right:40px;*/
-            background-color: transparent;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #ffffff; border-radius:5px;
-            position: absolute;
-
-
-            margin-left: 1450px;
-
-        }
-        .boton:hover{
-            background-color: white;
-            color: black;
-
-        }
-
     </style>
-    <body  style="background-color: #d71a1f">
+    <body  >
+        <video width=600 src="video/caja de cambios.mp4" ontimeupdate="timeupdate()"
+               style="background:black" autobuffer controls>
+            <p>This page is to demonstrate open HTML5 video, so if you're not using a
+                browser that can display the open Ogg Theora codec, there's not  much to see. Sorry!</p>
+        </video>
+        <div id="transcript">
+            <h3>Transcript</h3>
+            <p>
+                <span data-begin=1 data-end=6>Hi, my name's Dr Archimedes Einstein and I'm a Doctor of Science at the University of Science</span>
+                <span data-begin=6 data-end=9>in a very famous town that you're too stupid to have heard of.</span>
+                <span data-begin=9.5 data-end=11.5>Anyway, today we're going to talk about "synergies".</span>
+                <span data-begin=12 data-end=15>A lot of people are worried about synergies, but I can tell you that</span>
+                <!-- ... -->
+            </p>
+        </div>
+
         <script>
-            function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({
-                        pageLanguage: 'es,en', includedLanguages: 'es', defaultLanguage: 'es'
-                    }, 'google_translate_element2');
-                    }
-        </script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            var captions = [];
+            window.onload = function () {
+                //creamos el div
+                var caption = document.createElement('div');
+                caption.id = 'caption';
+                // Cargamos el primer elemento
+                var ref = document.getElementsByTagName('video')[0];
+                ref.parentNode.insertBefore(caption, ref.nextSibling);
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModalspanish" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                        <h6 class="modal-title" id="myModalLabel"> mesa</h6>
-                        <button id='empezar_grabar'  translate="no" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> Empezar a grabar</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="translate ">
-                            <div id="google_translate_element2">
+                // Cargamos todos los subtítulos
+                var nodes = document.querySelectorAll('#transcript span');
+                for (var i = 0; i < nodes.length; i++) {
+                    // Generamos un objeto con la información de cada línea
+                    var c = {
+                        'start': parseFloat(nodes[i].getAttribute('data-begin')),
+                        'end': parseFloat(nodes[i].getAttribute('data-end')),
+                        'text': nodes[i].textContent
+                    };
+                    console.log(c);
+                    captions.push(c);
 
-                            </div>
-                            <script type="text/javascript">
-//                                function googleTranslateElementInit() {
-//                                    new google.translate.TranslateElement({
-//                                        pageLanguage: 'es,en', includedLanguages: idiomatras
-//                                    }, 'google_translate_element2');
-//                                }
-
-                            </script> 
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-body" >
-
-                                <br><br>
-                                <br>
-                                <textarea placeholder="Aquí se convertirá el audio en texto" id='textArea' style="width: 1506px;height:500px;border-radius: 20px;border-width: 5px;padding-left: 10px"></textarea>                             
-                                <br><br>
-                                <!--           
-                                <span id="grabando"></span>
-                                            <h2>Seleccione el Genero de salida del audio, luego Clic en reproducir</h2>
-                                            <input type="radio" id="genero" name="genero" value="US English Male">Hombre</input>
-                                            <input type="radio" id="genero" name="genero" value="US English Female">Mujer</input>
-                                            <button id='reproducir' data-toggle="modal" data-target="#myModal2" onclick="move()"><span class="glyphicon glyphicon-download-alt"></span>EXPORTAR</button>
-                                            <br><br>-->
-                                <br><br>
-                                <div id="textArea2"  style="color: black; font-size: 10px"></div>
-                                <div id="otro" style="color: black; font-size: 10px"></div>
-                            </div></div>    
-
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="fondo" >
-            <img src="images/crosscurricular-en-blanco-png.png" width=100% height="100%">        
-        </div>
-        <div>
-            <button   id="es"  class="btn btn-outline-light btn-block iconos btnmmm" onclick="idiomaes()" value="es">ESPAÑOL</button>
-        </div
-        <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="en"   class="btn btn-outline-light btn-block iconos" onclick="idiomaen()"  value="en"style="margin-top: 300px;">INGLES</button>
-        </div>
-        <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="en_es" class="btn btn-outline-light btn-block iconos" onclick="idiomaes()" value="en_es" style="margin-top: 400px;">INGLES - ESPAÑOL</button>
-        </div>
-        <div>
-            <button data-toggle="modal" data-target="#myModalspanish" id="es_en"class="btn btn-outline-light btn-block iconos" onclick="idiomaen()" value="es_en" style="margin-top: 500px;">ESPAÑOL - INGLES</button>
-        </div>
-        <div>
-            <a href="nuevospeech.html" class="boton">Regresar a menu</a>
-        </div>
-        <!--<script>
-        $('.btnmmm').on('click',function(){
-            $('.modal-body').load('uploadfile.jsp',function(){
-                $('#myModalspanish').modal({show:true});
-            });
-        });
-        </script>-->
-        <script type="text/javascript">
-            var idioma = "";
-            var idiomatras = '';
-            function setcookie() {
-                document.cookie = "googtrans=/auto/en; expires=N/A;path=/";
-            }
-
-            jQuery.noConflict();
-            function idiomaes() {
-               
-                $('#myModalspanish').modal('show');
-                idioma = "Spanish Male";
-                idiomatras = 'es';
-                
-                $(document).ready(function () {
-                    var clase = $(".goog-te-combo");
-                    clase.attr("id", "idioma");
-                    var sel = document.getElementById("idioma");
-                    sel.selectedIndex = 1;
-                    $("#idioma").change();
-                });
-
-                // document.ready = document.getElementsByClassName('goog-te-combo').value = 'es';
-
-
-//                 var hh=document.getElementsByClassName("goog-te-combo");
-//                 var hhh=hh;
-//                 
-//                 console.log(hhh);
-
-
-
-                //document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
-
-            }
-            function idiomaen() {
-
-                idioma = "US English Female";
-                idiomatras = 'en';
-                (function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({
-                        pageLanguage: 'es,en', includedLanguages: idiomatras
-                    }, 'google_translate_element2');
-                })();
-
-                // document.cookie = "googtrans=/auto/" + idiomatras + "; expires=N/A;path=/";
-            }
-//            function idiomaen_es() {
-//                idioma = "Spanish Male";
-//                idiomatras="es";
-//            }
-//            function idiomaes_en() {
-//                idioma = "US English Female";
-//                idiomatras="en";
-//            }
-
-            var mic, recorder, soundFile;
-            var statev = 0;
-            var traducido = "";
-            //////////////////////p5.js
-            var myRec = new p5.SpeechRec();
-            var tipo = 0;
-            function setup() {
-                // create an audio in
-                mic = new p5.AudioIn();
-                myRec.continuous = true;
-                myRec.interimResults = true;
-                myRec.defaultLanguage = "en-US";
-                myRec.onResult = showResult;
-                var ttt = "";
-                var textArea = "";
-                var tradd = "";
-                var tre = "";
-                function showResult()
-                {
-                    if (myRec.resultValue === true) {
-                        if (myRec.resultConfidence >= 0.89 && myRec.resultConfidence <= 0.91) {
-
-                            ttt = ttt + myRec.resultString;
-                            textArea = document.getElementById("textArea");
-                            textArea.innerHTML = " " + ttt;
-                            document.getElementById("textArea2").innerHTML = myRec.resultString;
-                            myRec.resultString = "";
-                            window.setTimeout(obtener, 800);
-                        }
+                }
+            };
+// Función que actualizar el texto dependiendo del tiempo
+            function timeupdate() {
+                var v = document.querySelector('video');
+                var now = v.currentTime;
+                    var too=hora(now);
+                console.log(too);
+                var tt = typeof now;
+//                console.log(tt);
+//                console.log(now);
+                var text = "";
+                for (var i = 0; i < captions.length; i++) {
+                    if (now >= captions[i].start && now <= captions[i].end)
+                    {
+                        text = captions[i].text;
+                        break;
                     }
                 }
-                function obtener() {
-
-                    traducido = document.getElementById("textArea2").textContent;
-                    tre = tre + traducido;
-
-                    tradd = document.getElementById("traduc");
-                    // tradd.innerHTML = tre + " ";
-
-                    responsiveVoice.speak(traducido, idioma, {pitch: 0}, {rate: 0});
-                    document.getElementById("textArea2").innerHTML = myRec.resultString;
-                }
-                recorder = new p5.SoundRecorder();
-                // connect the mic to the recorder
-                recorder.setInput(mic);
-                soundFile = new p5.SoundFile();
+                document.getElementById('caption').innerHTML = text;
             }
-
-            var genero = "";
-            document.querySelector('#empezar_grabar').addEventListener('click', function () {
-                myRec.start();
-            });
-
-            document.querySelector('#textArea').addEventListener('onchange', function () {
-                var ooo = document.getElementById("textArea2").innerHTML = speechresult;
-            });
-
-          
-
-            function tranfe() {
-                var ooo = document.getElementById("textArea2").innerHTML = speechresult;
-
+            
+            function hora(segundos) {
+                var d = new Date(segundos * 1000);
+                //console.log(d);
+                // Ajuste de las 23 horas
+                //var hora = (d.getHours() === 0) ? 23 : d.getHours() - 1;
+               var hora=00;
+                //var hora2 = (hora < 9) ? "0" + hora : hora;
+                var minuto = (d.getMinutes() < 9) ? "0" + d.getMinutes() : d.getMinutes();
+                var segundo = (d.getSeconds() < 9) ? "0" + d.getSeconds() : d.getSeconds();
+                var mili=(d.getMilliseconds() < 99) ? "00" + d.getMilliseconds() : d.getMilliseconds();
+                return hora + ":" + minuto + ":" + segundo + "," + mili;
             }
-            function otrotras1() {
-                var ori = document.getElementById("textArea2");
-                traducido = document.getElementById("otro").innerHTML = ori.textContent;
-                console.log(ori.textContent);
-            }
-
+// Ocultamos los subtítulos
+            document.write('<style>#transcript{display:none}</style>');
         </script>
-
-
     </body>
 </html>
