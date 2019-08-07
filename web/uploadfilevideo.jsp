@@ -79,6 +79,27 @@
         .selidioma{
             color: black;
         }
+        #caption {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            bottom:30px; /* space for the video controls */
+            left: 0;
+            text-align: center;
+            font-family: sans-serif;
+/*            font-weight: bold;*/
+            color: white;
+            text-shadow: black 1px 1px 3px;
+            padding-bottom: .5em;
+            font-size: 10px;
+        }
+        #transcript span {display:table-row;}
+        #transcript [data-begin]:before{
+            content: " [" attr(data-begin) "s-" attr(data-end)"s]   ";
+            font-size:25%;
+            display:table-cell;
+            padding-right:1em;
+        }
     </style>
 
     <body  style="background-color: #304597; color: white;">
@@ -136,7 +157,7 @@
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <%
 
-            String archivourl = "C:\\Users\\C-02\\Desktop\\sistemas\\speech\\videospeech - copia\\web\\video";
+            String archivourl = "C:\\Users\\C-02\\Desktop\\sistemas\\speech\\speech\\web\\video";
             DiskFileItemFactory factory = new DiskFileItemFactory();
             factory.setSizeThreshold(2048);
             factory.setRepository(new File(archivourl));
@@ -216,9 +237,20 @@
                 </table>
                 <div id="video" class="w-50 p-3 embed-responsive embed-responsive-16by9 offset-3">
 
-                    <video id="videos" controls  preload="auto">
+                    <video id="videos" controls ontimeupdate="timeupdate()"
+                           style="background:black" autobuffer preload="auto">
                         <source src="video/<%=ruta_archivo%>" width="320" height="220" type="video/mp4" />
                     </video>
+                </div>
+                <div id="transcript">
+                    <h3>Transcript</h3>
+                    <!--            <p>
+                                    <span data-begin=1 data-end=6>Hi, my name's Dr Archimedes Einstein and I'm a Doctor of Science at the University of Science</span>
+                                    <span data-begin=6 data-end=9>in a very famous town that you're too stupid to have heard of.</span>
+                                    <span data-begin=9.5 data-end=11.5>Anyway, today we're going to talk about "synergies".</span>
+                                    <span data-begin=12 data-end=15>A lot of people are worried about synergies, but I can tell you that</span>
+                                     ... 
+                                </p>-->
                 </div>
                 <br>
                 <button id='empezar_grabar' translate="no" class="btn btn-outline-danger offset-5"><span class="glyphicon glyphicon-play" data-toggle="tooltip" data-placement="top" title="Empieza a reproducir y grabar a la vez"></span> <strong>Empezar a grabar</strong></button>
@@ -244,11 +276,10 @@
 
                 <script>
                     jQuery.noConflict();
-            var idioma = "";
-            var idiomatras = "es";
-            var name = "myModalenglish";
-            var genero = "";
-                   
+                    var idioma = "";
+                    var idiomatras = "es";
+                    var name = "myModalenglish";
+                    var genero = "";
                     var genero = "";
                     function genero3() {
                         genero = "US English Male";
@@ -260,11 +291,10 @@
                     }
                     $(document).ready(function () {
                         estado1 = localStorage.getItem("estado");
-                        if (estado1==0){
+                        if (estado1 == 0) {
                             $("#myModal2").modal('show');
                         }
                     });
-
                     function idiomaes() {
                         // localStorage.setItem("idioma", "Spanish Latin American Female");
                         idiomatras = "es";
@@ -272,8 +302,8 @@
 //                        estado = localStorage.getItem("estado");
                         localStorage.setItem("key", "español");
 //                        if (estado == "0") {
-                            location.reload();
-                            localStorage.setItem("estado", "1");
+                        location.reload();
+                        localStorage.setItem("estado", "1");
 //                        }
                     }
 
@@ -286,11 +316,56 @@
                         localStorage.setItem("key", "ingles");
 //                        if (estado == "0") {
 
-                            location.reload();
-                            localStorage.setItem("estado", "1");
+                        location.reload();
+                        localStorage.setItem("estado", "1");
 //                        }
                     }
-
+                    var captions = [];
+                    window.onload = function () {
+                        //creamos el div
+                        var caption = document.createElement('div');
+                        caption.id = 'caption';
+                        // Cargamos el primer elemento
+                        var ref = document.getElementsByTagName('video')[0];
+                        ref.parentNode.insertBefore(caption, ref.nextSibling);
+                        // Cargamos todos los subtítulos
+//                        var nodes = document.querySelectorAll('#transcript span');
+//                        for (var i = 0; i < nodes.length; i++) {
+//                            // Generamos un objeto con la información de cada línea
+//                            var c = {
+//                                'start': parseFloat(nodes[i].getAttribute('data-begin')),
+//                                'end': parseFloat(nodes[i].getAttribute('data-end')),
+//                                'text': nodes[i].textContent
+//                            };
+//                            console.log(c);
+//                            captions.push(c);
+//                        }
+                    };
+// Función que actualizar el texto dependiendo del tiempo
+                    function timeupdate() {
+                        var v = document.querySelector('video');
+                        var now = v.currentTime;
+                        var too = hora(now);
+                        //console.log(too);
+                        var tt = typeof now;
+//                console.log(tt);
+//                console.log(now);
+                        var text = "";
+                        for (var i = 0; i < captions.length; i++) {
+                            if (now >= captions[i].start && now <= captions[i].end)
+                            {
+                                text = captions[i].text;
+                               
+                                break;
+                            }
+                        
+                        if(now==captions[i].start){
+                             responsiveVoice.speak(text, "US English Female", {pitch: 1}, {rate: 0});
+                        }
+                    }
+                        document.getElementById('caption').innerHTML = text;
+                    }
+                    document.write('<style>#transcript{display:none}</style>');
                 </script>
 
                 <br><br>
@@ -332,20 +407,10 @@
                                 </table>-->
 
             </div>
-
-
-
-
-
             <script type="text/javascript">
-//                var myvideo;
-//                let playing = false;
-//                let fingers;
-//                let button;
                 jQuery.noConflict();
                 function setcookie() {
                     document.cookie = "googtrans=/auto/en; expires=N/A;path=/";
-
                 }
                 function hora(segundos) {
                     var d = new Date(segundos * 1000);
@@ -362,17 +427,10 @@
 
                 var word = [];
                 var wordd = [];
-
-//                onload = function () {
-//
-//                    
-//                    console.log(word);
-//                };
+                var wt=[];
                 var est = 1;
                 var videop;
                 function move() {
-                    //$('#myModal2').modal({backdrop: 'static', keyboard: false})
-
                     var elem = "";
                     var elem = document.getElementById("myBarr");
                     var width = 1;
@@ -391,7 +449,6 @@
                             recorder.stop();
                             responsiveVoice.cancel();
                             save(soundFile, 'mySound');
-
                         }
                     }
                 }
@@ -430,28 +487,22 @@
                     constructor() {
                         this.queue = [];
                     }
-
                     enqueue(element) {
                         this.queue.push(element);
                         return this.queue;
                     }
-
                     dequeue() {
                         return this.queue.shift();
                     }
-
                     peek() {
                         return this.queue[0];
                     }
-
                     size() {
                         return this.queue.length;
                     }
-
                     isEmpty() {
                         return this.queue.length === 0;
                     }
-
                     print() {
                         return this.queue;
                     }
@@ -479,12 +530,10 @@
                 speech.onresult = function (event)
                 {
                     var len = event.results.length - 1;
-
                     //inte += event.results[len][0].transcript;
                     let interimTranscript = "";
                     for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
                         let transcript = event.results[i][0].transcript;
-
                         if (event.results[i].isFinal) {
                             finalTranscript += transcript;
                             ini = 0;
@@ -496,25 +545,24 @@
                             var f = videop.currentTime;
                             var final = hora(f);
                             word.push(final);
+                            wt.push(f);
                             console.log(word);
                             test = 1;
                             if (test == 1) {
                                 test = 0;
                                 window.setTimeout('obtener()', 1500);
-
                             }
                         } else {
                             interimTranscript += transcript;
                             var con = interimTranscript.length;
-
                             if (con >= 0) {
 
                                 if (ini == 0) {
                                     var inic = videop.currentTime;
                                     var inicio = hora(inic);
                                     word.push(inicio);
+                                    wt.push(inic);
                                     console.log(word);
-
                                 }
                                 ini++;
                             }
@@ -545,32 +593,35 @@
                 function obtener() {
 
                     traducido = document.getElementById("textArea2").textContent;
-
                     queue2.enqueue(traducido);
                     console.log(traducido);
                     wordd.push(traducido);
                     console.log(wordd);
                     tra = queue2.peek();
-
                     queue2.dequeue();
                     textArea.innerHTML += tra;
                     // responsiveVoice.speak(tra, idioma, {pitch: 1}, {rate: 0});
 
                 }
-                var n = 0;
+                var n = 0
+
                 function exportar() {
                     var max = 1 + word.length;
                     var max2 = wordd.length;
                     var box = document.getElementById("srt");
                     var x = 0;
-
-
                     for (var o = 1; o <= max / 2; o++) {
                         box.innerHTML += o + "\n";
-
                         for (var u = 0; u < 1; u++) {
 
                             box.innerHTML += word[x] + " --> " + word[x + 1] + "\n";
+                            var c = {
+                                'start': parseFloat(wt[x]),
+                                'end': parseFloat(wt[x + 1]),
+                                'text': wordd[o - 1]
+                            };
+                            captions.push(c);
+                            console.log(c);
                             x += 2;
                         }
                         box.innerHTML += "<font size='15px'>" + wordd[o - 1] + "\n" + "\n";
@@ -637,8 +688,6 @@
                     }
 
                 };
-
-
 //                document.querySelector('#reproducir').addEventListener('click', function () {
 ////                    genero = document.querySelector('img[name="genero"]:checked').value;
 //                    console.log(genero);
@@ -660,7 +709,6 @@
                     videop.play();
                     //vid.play();
                     var ti = videop.duration;
-
 //                    var tii = videop.currentTime;
                     //console.log(tii);
 
@@ -676,7 +724,6 @@
 
                         if (ti == a) {
                             speech.stop();
-
                         }
                     }, true);
                 });
@@ -735,15 +782,12 @@
                 function repro() {
                     // make sure user enabled the mic
                     document.getElementById("reproducir").innerHTML = "Parar";
-
                     mic.start();
                     if (statev === 0 && mic.enabled) {
                         recorder.record(soundFile);
                         statev++;
                         console.log(statev);
-
                         document.getElementById("reproducir").disabled = false;
-
                     } else if (statev === 1) {
                         recorder.stop();
                         responsiveVoice.cancel();
@@ -752,8 +796,6 @@
                     } else if (statev === 2) {
                         //soundFile.play(); // play the result!
                         save(soundFile, 'mySound');
-
-
                         statev++;
                     }
                 }
